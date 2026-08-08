@@ -50,7 +50,7 @@ h1,h2,h3,h4,h5,h6,p{margin:0}
 @media (prefers-reduced-motion: reduce){.hero .btn-primary,.nav-cta,.hero .btn-primary::after,.nav-cta::after,.marquee-track,.ticker-item{animation:none !important}}
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(11,1,34,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(153,123,255,.14)}
 .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;height:76px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo img{height:38px;width:auto}
+.nav-logo img{height:34px;width:auto}
 .nav-links{display:flex;align-items:center;gap:34px;font-family:var(--font-head);font-weight:600;font-size:15px}
 .nav-links a{color:var(--violet-100);opacity:.85;transition:opacity .2s,color .2s}
 .nav-links a:hover{opacity:1;color:#7FE9D3}
