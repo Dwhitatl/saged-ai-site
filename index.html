@@ -31,14 +31,18 @@
 <script data-lp-token-hydrate>
 (function(){try{
   var slug="lp-mrotnjhf-fdkp2";
+  var SITEK="";
   var SK='lp_access_'+slug;
   var map={access_token:'lp_pw_',allowlist_access_token:'lp_al_',pin_access_token:'lp_pin_',paywall_access_token:'lp_paid_'};
+  function siteTok(){try{return SITEK?localStorage.getItem(SITEK):null;}catch(e){return null;}}
   var u=new URL(location.href);var found=null;var changed=false;
-  Object.keys(map).forEach(function(p){var v=u.searchParams.get(p);if(v){found=v;try{localStorage.setItem(map[p]+slug,v);}catch(e){}u.searchParams.delete(p);changed=true;}});
+  var PINP=true;
+  if(!PINP){try{localStorage.removeItem('lp_pin_'+slug);if(SITEK)localStorage.removeItem(SITEK);}catch(e){}}
+  Object.keys(map).forEach(function(p){var v=u.searchParams.get(p);if(v){found=v;try{if(PINP||p!=='pin_access_token'){localStorage.setItem(map[p]+slug,v);if(SITEK&&p==='pin_access_token')localStorage.setItem(SITEK,v);}}catch(e){}u.searchParams.delete(p);changed=true;}});
   if(found){try{sessionStorage.setItem(SK,found);}catch(e){}}
-  else{try{if(!sessionStorage.getItem(SK)){var t=localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug);if(t)sessionStorage.setItem(SK,t);}}catch(e){}}
+  else{try{if(!sessionStorage.getItem(SK)){var t=localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug)||siteTok();if(t)sessionStorage.setItem(SK,t);}}catch(e){}}
   if(changed){try{history.replaceState(null,'',u.toString());}catch(e){}}
-  function getTok(){try{return sessionStorage.getItem(SK)||localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug);}catch(e){return null;}}
+  function getTok(){try{return sessionStorage.getItem(SK)||localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug)||siteTok();}catch(e){return null;}}
   function needsToken(url,method){if(!url)return false;var s=String(url);var m=(method||'GET').toUpperCase();var isSheetWrite=(m==='POST'||m==='PATCH'||m==='PUT'||m==='DELETE')&&/\/sheet-rows(\/|$|\?)/.test(s);var isSheetRead=/\/sheet-data(\/|$|\?)/.test(s);var isLlm=/\/api\/landing-pages\/public\/[^/]+\/(llm|llm-config)(\/|$|\?)/.test(s);return isSheetWrite||isSheetRead||isLlm;}
   if(window.fetch){var _f=window.fetch;window.fetch=function(input,init){try{var url=typeof input==='string'?input:(input&&input.url)||'';var method=(init&&init.method)||(input&&input.method)||'GET';if(needsToken(url,method)){var tok=getTok();if(tok){init=init||{};var h=new Headers(init.headers||(typeof input!=='string'?input.headers:undefined)||{});if(!h.has('X-Landing-Page-Token'))h.set('X-Landing-Page-Token',tok);init.headers=h;}}}catch(e){}return _f.call(this,input,init);};}
   if(window.XMLHttpRequest){var _o=XMLHttpRequest.prototype.open;var _s=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.open=function(m,u){this.__lpM=m;this.__lpU=u;return _o.apply(this,arguments);};XMLHttpRequest.prototype.send=function(){try{if(needsToken(this.__lpU,this.__lpM)){var tok=getTok();if(tok)this.setRequestHeader('X-Landing-Page-Token',tok);}}catch(e){}return _s.apply(this,arguments);};}
@@ -314,7 +318,7 @@
 <body>
 <nav class="nav" id="nav" data-section="nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="#hero-section"><img src="https://framerusercontent.com/images/kNQXORqO6uRxKFx2OuKICr8bMHU.png" alt="SAGED.AI"></a>
+    <a class="nav-logo" href="#hero-section"><img src="assets/logo-header.png" alt="SAGED.AI"></a>
     <div class="nav-links">
       <a href="#hero-section">Home</a>
       <a href="#services">Services</a>
@@ -399,19 +403,19 @@
     <a class="btn btn-primary" style="margin-top:34px" href="https://calendly.com/denisedwhitfield/30min" target="_blank" rel="noopener">Schedule an Appointment</a>
     <div class="marquee">
       <div class="marquee-track" id="marqueeTrack">
-        <img src="https://framerusercontent.com/images/6mns3OPe3TLj0giSmnPOt95Af5g.png" alt="">
-        <img src="https://framerusercontent.com/images/kKhpmqEleKGKgbxggC8sJtlKk.png" alt="">
-        <img src="https://framerusercontent.com/images/YdI3udwvfNIS47fGWxffbhNM.png" alt="">
-        <img src="https://framerusercontent.com/images/MJy7h4BhhQ4N6lO5VuDaui33cIg.png" alt="">
-        <img src="https://framerusercontent.com/images/DsbdONwsmirfnRkBHOSismw07E.png" alt="">
-        <img src="https://framerusercontent.com/images/fTp8ybjw5LcLvTUtde1He5mesM.png" alt="">
-        <img src="https://framerusercontent.com/images/TDqs0tio9WsZBD6l8RdxY0Iv6qc.png" alt="">
-        <img src="https://framerusercontent.com/images/2nJbdGeBwNRweYapKobnSiHn9E.png" alt="">
-        <img src="https://framerusercontent.com/images/ZSbiI4kZT3GOqweWqPuruIRIxR8.png" alt="">
-        <img src="https://framerusercontent.com/images/lU5zxFtYAi9x2UfFfT2GIVf3ufM.png" alt="">
+        <img src="assets/marquee-01.png" alt="">
+        <img src="assets/marquee-02.png" alt="">
+        <img src="assets/marquee-03.png" alt="">
+        <img src="assets/marquee-04.png" alt="">
+        <img src="assets/marquee-05.png" alt="">
+        <img src="assets/marquee-06.png" alt="">
+        <img src="assets/marquee-07.png" alt="">
+        <img src="assets/marquee-08.png" alt="">
+        <img src="assets/marquee-09.png" alt="">
+        <img src="assets/marquee-10.png" alt="">
       </div>
     </div>
-    <figure class="automations-figure"><img src="https://framerusercontent.com/images/BHSJbJKzOKPTI78PTQgjiSGw24.jpg" alt="AI automations in action"></figure>
+    <figure class="automations-figure"><img src="assets/automations.jpg" alt="AI automations in action"></figure>
   </div>
 </section>
 <section class="section assist center" id="assistants" data-section="assistants">
@@ -445,21 +449,21 @@
       <div class="card t-card">
         <blockquote>SAGED.AI's AI-powered CRM analysis offers personalized service, boosting client loyalty. Automated communications provide consistent engagement, enhancing our studio's growth and reputation with unprecedented personalization.</blockquote>
         <div class="t-person">
-          <img src="https://framerusercontent.com/images/C19ei0auL9VFtWs8z6QSkvijI.jpg" alt="Michelle Simons">
+          <img src="assets/testimonial-michelle.jpg" alt="Michelle Simons">
           <div><div class="nm">Michelle Simons</div><div class="rl">Owner at Yoga Studio</div></div>
         </div>
       </div>
       <div class="card t-card">
         <blockquote>SAGED.AI's AI solutions personalize shopping, enhancing conversions with tailored recommendations. AI-powered chatbots efficiently handle queries. We foresee its potential in streamlining Customer Service and HR.</blockquote>
         <div class="t-person">
-          <img src="https://framerusercontent.com/images/8shDWi16XpaXDPDVIy6MG9DZG5Y.jpg" alt="Ava Richardson">
+          <img src="assets/testimonial-ava.jpg" alt="Ava Richardson">
           <div><div class="nm">Ava Richardson</div><div class="rl">Founder at E-Commerce Brand</div></div>
         </div>
       </div>
       <div class="card t-card">
         <blockquote>SAGED.AI's AI revolutionized our firm, streamlining tasks and boosting efficiency. Its rapid data processing enhances client-focused work, promising growth in Sales and Customer Service.</blockquote>
         <div class="t-person">
-          <img src="https://framerusercontent.com/images/FWdF151Aje7K3IsQfvotJZPTX4Q.jpg" alt="Michael Johnson">
+          <img src="assets/testimonial-michael.jpg" alt="Michael Johnson">
           <div><div class="nm">Michael Johnson</div><div class="rl">CEO at CPA Firm</div></div>
         </div>
       </div>
@@ -620,7 +624,7 @@ Ready to unlock the power of AI for your business? Let's talk.</div>
 </section>
 <footer class="footer" data-section="footer">
   <div class="wrap">
-    <img src="https://framerusercontent.com/images/kyoKLw3mysgIAFGzOAKvIJv91k.png" alt="SAGED.AI">
+    <img src="assets/logo-footer.png" alt="SAGED.AI">
     <p class="copyright">© 2026 SAGED.AI</p>
   </div>
 </footer>
