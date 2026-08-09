@@ -392,15 +392,15 @@
 
 <section class="section video-section" id="video" data-section="video">
   <div class="wrap">
-    <div class="video-grid">
-      <div class="video-frame reveal">
-        <video id="denisePreview" muted loop playsinline poster="https://dwhitatl.github.io/saged-ai-site/assets/automations.jpg" style="display:none">
+    <div class="video-grid" style="grid-template-columns:340px 1fr">
+      <div class="video-frame reveal" style="aspect-ratio:9/16;max-width:330px;margin:0 auto;">
+        <video id="denisePreview" muted loop playsinline poster="https://dwhitatl.github.io/saged-ai-site/assets/denise-poster.jpg" style="display:none">
           <source src="https://dwhitatl.github.io/saged-ai-site/assets/denise-intro.mp4" type="video/mp4">
         </video>
         <div class="video-fallback" id="videoFallback">
           <div class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <div class="vf-title">Video Coming Soon</div>
-          <div class="vf-sub">Denise's 10-second intro will play here automatically once uploaded to <code>assets/denise-intro.mp4</code></div>
+          <div class="vf-sub">Denise's intro plays here as soon as denise-intro.mp4 is added to the repo assets folder.</div>
         </div>
       </div>
       <div class="video-copy reveal">
