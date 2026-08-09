@@ -8,7 +8,7 @@
     const CHAT_COLOR = '#000';
     const ACCOUNT_ID = '1605006';
     const CHATBOT_ID = 'TPMVAgTlLyk';
-    const BUTTON_IMAGE_URL = 'https://storage.googleapis.com/wttus/assets/57/a/1605006/images/Logo-03.jpg';
+    const BUTTON_IMAGE_URL = 'https://storage.googleapis.com/wttus/assets/57/a/1605006/images/Avator-for%20Chat%20bubble%202-16-2025.png';
     let isChatOpen = false;
 
     const styleSheet = document.createElement('style');
