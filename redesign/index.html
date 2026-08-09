@@ -674,18 +674,22 @@
         <div class="eyebrow">Ask Us Anything</div>
         <h2>Straight answers, no sales pitch</h2>
         <p>These are the questions business owners bring us most often. If yours isn't here, ask below — you'll get a real answer, not a brochure.</p>
-        <div class="ask-inline" id="askPanel">
+
+        <div class="ask-start" id="askStart">
+          <span class="ask-eyebrow">Answered live</span>
+          <p>Ask us anything about applying AI in your business.</p>
+          <button class="btn btn-teal" id="askBegin" style="width:100%">Start a conversation</button>
+        </div>
+
+        <div class="ask-inline off" id="askPanel">
           <div class="ask-inline-head">
             <span>Ask us anything — answered live</span>
-            <button class="ask-x" id="askClose" aria-label="Close chat" title="Close chat">&times;</button>
+            <button class="ask-x" id="askClose" aria-label="End chat" title="End chat">&times;</button>
           </div>
-          <iframe id="askFrame" src="https://paymegpt.com/agents/47699893/embed" title="Ask SAGED.AI" loading="lazy"></iframe>
+          <iframe id="askFrame" src="about:blank" title="Ask SAGED.AI"></iframe>
         </div>
-        <div class="ask-restart" id="askRestart">
-          <p>Chat ended.</p>
-          <button class="btn btn-out" id="askNew">Start a new chat</button>
-        </div>
-        <a class="btn btn-teal" style="margin-top:16px;width:100%" href="https://calendly.com/denisedwhitfield/30min" target="_blank" rel="noopener">Book a Free 30-Minute Audit</a>
+
+        <a class="btn btn-out" style="margin-top:16px;width:100%" href="https://calendly.com/denisedwhitfield/30min" target="_blank" rel="noopener">Book a Free 30-Minute Audit</a>
       </aside>
       <div class="faq-list">
         <details class="faq-item" open>
