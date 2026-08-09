@@ -688,6 +688,7 @@
 </section>
 
 <section class="section faq" id="faq" data-section="faq">
+  
   <div class="wrap">
     <div class="faq-layout">
       <aside class="faq-aside reveal">
@@ -697,7 +698,15 @@
         <div class="eyebrow">Ask Denise</div>
         <h2>Straight answers, no sales pitch</h2>
         <p>These are the questions business owners bring me most often. If yours isn't here, ask me directly — you'll get a real answer, not a brochure.</p>
-        <a class="btn btn-teal" href="https://calendly.com/denisedwhitfield/30min" target="_blank" rel="noopener">Ask Me Your Question</a>
+        <div class="ask-box">
+          <div class="ask-row">
+            <textarea id="askInput" rows="1" placeholder="Ask me anything about AI for your business…"></textarea>
+            <button class="ask-send" id="askSend" aria-label="Send question">↑</button>
+          </div>
+          <div class="ask-hint">Answered live · Powered by SAGED.AI</div>
+          <div class="ask-answer" id="askAnswer"></div>
+          <a class="btn btn-teal ask-cta" id="askCta" href="https://calendly.com/denisedwhitfield/30min" target="_blank" rel="noopener">Book a Free 30-Minute Audit</a>
+        </div>
       </aside>
       <div class="faq-list">
         <details class="faq-item" open>
@@ -738,6 +747,57 @@
       </div>
     </div>
   </div>
+  <script>
+(function(){
+  var input=document.getElementById('askInput'),
+      send=document.getElementById('askSend'),
+      out=document.getElementById('askAnswer'),
+      cta=document.getElementById('askCta');
+  if(!input||!send||!out) return;
+  var history=[];
+  var SYS="You are the AI assistant on saged.ai, the website of SAGED.AI, an AI consulting firm in Atlanta, Georgia led by Denise Whitfield (President & CEO, MBA). You answer questions from small and medium-sized business owners considering AI.\n\nWhat SAGED.AI does: AI Consulting (audit of where AI pays off plus a sequenced plan); Conversational Assistants (trained on the client's own material, handle inquiries, bookings and FAQs 24/7); Workflow Automation (lead capture, follow-up, order processing, connected to existing tools); AI-Powered CRM (predictive customer data and automated outreach); AI Search Visibility (getting the business recommended by ChatGPT, Claude, Gemini and Perplexity); Team Enablement (training so AI use is consistent across a team).\n\nThe SAGED Method: Streamline, Automate, Grow, Elevate, Dominate.\n\nPricing: Essential AI $499/month, Growth AI Accelerator $799/month, Enterprise AI custom pricing. Consultations are free, 30 minutes, no obligation.\n\nRules: Answer in 2-4 short sentences, plain language, no jargon and no bullet lists. Be warm and direct. Never invent services, prices, timelines, client names or statistics beyond what is above. If you do not know something, say so and suggest booking a call with Denise. If the question suggests real buying interest, briefly invite them to book the free 30-minute audit.";
+  function bubble(html){ out.className='ask-answer on'; out.innerHTML=html; }
+  function ask(q){
+    history.push({role:'user',content:q});
+    bubble('<span class="who">Answering</span><span class="ask-typing"><span>·</span><span>·</span><span>·</span></span>');
+    var meta=document.querySelector('meta[name="llm-proxy-url"]');
+    if(!meta||!meta.content){
+      bubble('<span class="who">SAGED.AI</span>Let me get you a real answer — opening a chat now.');
+      if(window.openChat) setTimeout(window.openChat,600);
+      return;
+    }
+    fetch(meta.content.replace(/\/$/,'')+'/openai',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({model:'gpt-4o-mini',max_tokens:320,temperature:0.4,
+        messages:[{role:'system',content:SYS}].concat(history.slice(-6))})
+    }).then(function(r){return r.json();}).then(function(d){
+      var t=(d&&d.choices&&d.choices[0]&&d.choices[0].message&&d.choices[0].message.content)
+          ||(d&&d.content&&d.content[0]&&d.content[0].text)||(d&&d.text)||(d&&d.message)||'';
+      if(!t) throw new Error('empty');
+      history.push({role:'assistant',content:t});
+      bubble('<span class="who">SAGED.AI</span>'+t.replace(/</g,'&lt;'));
+      if(cta) cta.className='btn btn-teal ask-cta on';
+    }).catch(function(){
+      bubble('<span class="who">SAGED.AI</span>I could not reach the assistant just now. Opening a chat so you still get an answer.');
+      if(window.openChat) setTimeout(window.openChat,700);
+    });
+  }
+  function go(){
+    var q=input.value.trim(); if(!q) return;
+    input.value=''; input.style.height='auto';
+    send.disabled=true; ask(q);
+    setTimeout(function(){send.disabled=false;},1200);
+  }
+  send.addEventListener('click',go);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();go();}
+  });
+  input.addEventListener('input',function(){
+    input.style.height='auto';
+    input.style.height=Math.min(input.scrollHeight,120)+'px';
+  });
+})();
+  </script>
 </section>
 
 <section class="section band final-cta center">
