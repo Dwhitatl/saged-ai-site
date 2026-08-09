@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- BASE:START (managed by Coding Agent — do not edit) -->
+<base href="/saged-ai-site/redesign/">
+<!-- BASE:END -->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+
+<!-- SEO Meta Tags -->
+<title>SAGED.AI — AI That Moves Your Business Forward | Atlanta AI Consulting</title>
+<meta name="description" content="SAGED.AI helps small and medium-sized businesses harness AI with confidence — strategy, automation, and conversational AI built for how you actually work." />
+<meta property="og:title" content="SAGED.AI — AI That Moves Your Business Forward | Atlanta AI Consulting" />
+<meta property="og:description" content="SAGED.AI helps small and medium-sized businesses harness AI with confidence — strategy, automation, and conversational AI built for how you actually work." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SAGED.AI — AI That Moves Your Business Forward | Atlanta AI Consulting" />
+<meta name="twitter:description" content="SAGED.AI helps small and medium-sized businesses harness AI with confidence — strategy, automation, and conversational AI built for how you actually work." />
+<!-- End SEO Meta Tags -->
+<script data-lp-token-hydrate>
+(function(){try{
+  var slug="lp-mrotnjhf-fdkp2-copy-1786235811924";
+  var SITEK="";
+  var SK='lp_access_'+slug;
+  var map={access_token:'lp_pw_',allowlist_access_token:'lp_al_',pin_access_token:'lp_pin_',paywall_access_token:'lp_paid_'};
+  function siteTok(){try{return SITEK?localStorage.getItem(SITEK):null;}catch(e){return null;}}
+  var u=new URL(location.href);var found=null;var changed=false;
+  var PINP=true;
+  if(!PINP){try{localStorage.removeItem('lp_pin_'+slug);if(SITEK)localStorage.removeItem(SITEK);}catch(e){}}
+  Object.keys(map).forEach(function(p){var v=u.searchParams.get(p);if(v){found=v;try{if(PINP||p!=='pin_access_token'){localStorage.setItem(map[p]+slug,v);if(SITEK&&p==='pin_access_token')localStorage.setItem(SITEK,v);}}catch(e){}u.searchParams.delete(p);changed=true;}});
+  if(found){try{sessionStorage.setItem(SK,found);}catch(e){}}
+  else{try{if(!sessionStorage.getItem(SK)){var t=localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug)||siteTok();if(t)sessionStorage.setItem(SK,t);}}catch(e){}}
+  if(changed){try{history.replaceState(null,'',u.toString());}catch(e){}}
+  function getTok(){try{return sessionStorage.getItem(SK)||localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug)||siteTok();}catch(e){return null;}}
+  function needsToken(url,method){if(!url)return false;var s=String(url);var m=(method||'GET').toUpperCase();var isSheetWrite=(m==='POST'||m==='PATCH'||m==='PUT'||m==='DELETE')&&/\/sheet-rows(\/|$|\?)/.test(s);var isSheetRead=/\/sheet-data(\/|$|\?)/.test(s);var isLlm=/\/api\/landing-pages\/public\/[^/]+\/(llm|llm-config)(\/|$|\?)/.test(s);return isSheetWrite||isSheetRead||isLlm;}
+  if(window.fetch){var _f=window.fetch;window.fetch=function(input,init){try{var url=typeof input==='string'?input:(input&&input.url)||'';var method=(init&&init.method)||(input&&input.method)||'GET';if(needsToken(url,method)){var tok=getTok();if(tok){init=init||{};var h=new Headers(init.headers||(typeof input!=='string'?input.headers:undefined)||{});if(!h.has('X-Landing-Page-Token'))h.set('X-Landing-Page-Token',tok);init.headers=h;}}}catch(e){}return _f.call(this,input,init);};}
+  if(window.XMLHttpRequest){var _o=XMLHttpRequest.prototype.open;var _s=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.open=function(m,u){this.__lpM=m;this.__lpU=u;return _o.apply(this,arguments);};XMLHttpRequest.prototype.send=function(){try{if(needsToken(this.__lpU,this.__lpM)){var tok=getTok();if(tok)this.setRequestHeader('X-Landing-Page-Token',tok);}}catch(e){}return _s.apply(this,arguments);};}
+}catch(e){}})();
+</script>
+
+<script data-field-replace>
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var fields={};
+  var paramMap={
+    'first_name':'firstName','last_name':'lastName','full_name':'fullName',
+    'email':'email','phone':'phone','company':'company',
+    'city':'city','state':'state','country':'country'
+  };
+  var skipTags={'SCRIPT':1,'STYLE':1,'NOSCRIPT':1,'TEXTAREA':1,'CODE':1,'PRE':1};
+  var hasUrlFields=false;
+  for(var p in paramMap){
+    var v=params.get(p);
+    if(v){fields[paramMap[p]]=v;hasUrlFields=true;}
+  }
+  var contactId=params.get('contact_id');
+  function esc(s){
+    if(!s)return s;
+    var d=document.createElement('div');
+    d.appendChild(document.createTextNode(s));
+    return d.innerHTML;
+  }
+  function doReplace(data){
+    var r={};
+    r['{{full_name}}']=esc(((data.firstName||'')+' '+(data.lastName||'')).trim()||((data.fullName||data.name)||''));
+    r['{{first_name}}']=esc(data.firstName||(data.name?data.name.split(' ')[0]:'')||'');
+    r['{{last_name}}']=esc(data.lastName||(data.name&&data.name.indexOf(' ')>-1?data.name.substring(data.name.indexOf(' ')+1):'')||'');
+    r['{{email}}']=esc(data.email||'');
+    r['{{phone}}']=esc(data.phone||'');
+    r['{{company}}']=esc(data.company||'');
+    r['{{city}}']=esc(data.city||'');
+    r['{{state}}']=esc(data.state||'');
+    r['{{country}}']=esc(data.country||'');
+    r['{{date}}']=new Date().toLocaleDateString();
+    r['{{time}}']=new Date().toLocaleTimeString();
+    r['{{location}}']=[data.city,data.state,data.country].filter(Boolean).join(', ');
+    r['{{tracking_id}}']=esc(data.trackingId||'');
+    r['{{lastClickedProduct}}']=esc(data.lastClickedProduct||'');
+    r['{{lastProductClickDate}}']=esc(data.lastProductClickDate||'');
+    r['{{lastClickedProductPrice}}']=esc(data.lastClickedProductPrice||'');
+    r['{{lastClickedProductURL}}']=esc(data.lastClickedProductURL||'');
+    r['{{productsClickedCount}}']=esc(data.productsClickedCount||'0');
+    r['{{ip_address}}']=esc(data.ipAddress||'');
+    r['{{ip}}']=esc(data.ipAddress||'');
+    if(data.customFields){
+      for(var k in data.customFields){
+        r['{{'+k+'}}']=esc(String(data.customFields[k]||''));
+      }
+    }
+    params.forEach(function(v,k){
+      if(!paramMap[k]&&k!=='contact_id'&&k!=='page_id'&&k.indexOf('utm_')!==0){
+        r['{{'+k+'}}']=esc(v);
+      }
+    });
+    var hasValues=false;
+    for(var key in r){if(r[key]){hasValues=true;break;}}
+    if(!hasValues)return;
+    var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+      acceptNode:function(n){
+        var p=n.parentNode;
+        if(p&&skipTags[p.nodeName])return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var node;
+    while(node=walker.nextNode()){
+      var txt=node.nodeValue;
+      if(txt&&txt.indexOf('{{')>-1){
+        var changed=txt;
+        for(var ph in r){
+          if(r[ph]&&changed.indexOf(ph)>-1){
+            changed=changed.split(ph).join(r[ph]);
+          }
+        }
+        if(changed!==txt)node.nodeValue=changed;
+      }
+    }
+    var attrs=['value','placeholder','content','alt','title'];
+    attrs.forEach(function(attr){
+      var els=document.querySelectorAll('['+attr+'*="{{"]');
+      for(var i=0;i<els.length;i++){
+        var tag=els[i].tagName;
+        if(skipTags[tag])continue;
+        var val=els[i].getAttribute(attr);
+        if(val){
+          var nv=val;
+          for(var ph in r){
+            if(r[ph]&&nv.indexOf(ph)>-1){
+              nv=nv.split(ph).join(r[ph]);
+            }
+          }
+          if(nv!==val)els[i].setAttribute(attr,nv);
+        }
+      }
+    });
+  }
+  function run(){
+    if(contactId){
+      var xhr=new XMLHttpRequest();
+      xhr.open('GET','https://paymegpt.com/api/landing/context/'+encodeURIComponent(contactId)+'?page_id=6040');
+      xhr.onload=function(){
+        if(xhr.status===200){
+          try{
+            var resp=JSON.parse(xhr.responseText);
+            if(resp.success&&resp.contact){
+              var merged=resp.contact;
+              for(var k in fields){merged[k]=fields[k];}
+              doReplace(merged);
+              return;
+            }
+          }catch(e){}
+        }
+        if(hasUrlFields)doReplace(fields);
+      };
+      xhr.onerror=function(){if(hasUrlFields)doReplace(fields);};
+      xhr.send();
+    }else if(hasUrlFields){
+      doReplace(fields);
+    }
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}
+  else{run();}
+})();
+</script>
+<script data-payment>
+(function(){
+  var slug='U6nPtgkb';
+  var apiBase='https://paymegpt.com';
+  var successSubtext='';var successBtnLabel='Continue';var successBtnColor='#16a34a';var successRedirect='';
+  function findEmail(){
+    var ids=['email','emailAddress','buyer-email','buyerEmail','user-email','userEmail','checkout-email','customer-email','contact-email'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.includes('@'))return el.value.trim();}
+    var inputs=document.querySelectorAll('input[type="email"],input[name*="email"],input[placeholder*="email"],input[placeholder*="Email"]');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.includes('@'))return inputs[j].value.trim();}
+    return '';
+  }
+  function findName(){
+    var ids=['name','fullName','full-name','buyer-name','buyerName','customer-name','userName','user-name'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value)return el.value.trim();}
+    var inputs=document.querySelectorAll('input[name*="name"]:not([name*="email"]):not([type="email"]),input[placeholder*="name"]:not([placeholder*="email"]):not([type="email"]),input[placeholder*="Name"]:not([type="email"])');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value)return inputs[j].value.trim();}
+    return '';
+  }
+  function findPhone(){var ids=['phone','phoneNumber','phone-number','tel','telephone','mobile','mobileNumber','cell','contact-phone','buyer-phone'];for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.trim())return el.value.trim();}var inputs=document.querySelectorAll('input[type="tel"],input[name*="phone"],input[name*="tel"],input[name*="mobile"],input[placeholder*="phone"],input[placeholder*="Phone"]');for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.trim())return inputs[j].value.trim();}return '';}
+  var __realProcessPayment=function(a,b,c,d,e){
+    var amountCents,email,productName,productDescription,customerName,quantity;
+    if(a&&typeof a==='object'){
+      amountCents=a.amountCents;email=a.email;productName=a.productName;
+      productDescription=a.productDescription||'';customerName=a.name||'';quantity=a.quantity||1;
+    }else{
+      amountCents=typeof a==='number'?a:0;productName=typeof b==='string'?b:'';
+      productDescription=typeof c==='string'?c:'';email='';customerName='';quantity=1;
+    }
+    if(!email)email=findEmail();
+    if(!customerName)customerName=findName();
+    var phone=findPhone();
+    if(!productName){alert('Product name is required.');return Promise.reject('no_product_name');}
+    if(!amountCents||amountCents<100){alert('Amount must be at least $1.00');return Promise.reject('invalid_amount');}
+    if(!email){alert('Please enter your email address.');return Promise.reject('no_email');}
+    var successBase=window.location.href.split('?')[0];
+    var __pLoc=(document.documentElement.lang||navigator.language||'en');
+    return fetch(apiBase+'/api/landing-pages/public/'+slug+'/payment/checkout',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:email,name:customerName,phone:phone||'',amountCents:amountCents,productName:productName,productDescription:productDescription,quantity:quantity,locale:__pLoc,successUrl:successBase+'?payment=success&product='+encodeURIComponent(productName)+'&session_id={CHECKOUT_SESSION_ID}',cancelUrl:successBase+'?payment=cancelled'})
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d.checkoutUrl){window.location.href=d.checkoutUrl;}
+      else{alert(d.error||'Failed to process payment');throw new Error(d.error);}
+    });
+  };
+  Object.defineProperty(window,'__processPayment',{value:__realProcessPayment,writable:false,configurable:false});
+  document.addEventListener('DOMContentLoaded',function(){
+    var urlParams=new URLSearchParams(window.location.search);
+    if(urlParams.get('payment')==='success'){
+      var sidP=urlParams.get('session_id');
+      if(sidP){try{fetch(apiBase+'/api/landing-pages/public/'+slug+'/checkout/confirm',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:sidP})}).catch(function(){});}catch(e){}}
+      var pName=urlParams.get('product')||'your item';
+      var overlay=document.createElement('div');overlay.id='payment-success-overlay';
+      overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:system-ui,-apple-system,sans-serif;';
+      function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+      var subTxt=successSubtext||('Thank you for purchasing '+pName+'.');
+      overlay.innerHTML='<div style="background:white;border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);"><div style="width:64px;height:64px;border-radius:50%;background:#dcfce7;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 style="margin:0 0 12px;font-size:24px;font-weight:700;color:#111827;">Payment Successful!</h2><p style="margin:0 0 24px;color:#6b7280;font-size:16px;">'+esc(subTxt)+'</p><button id="lp-pay-success-btn" style="padding:12px 32px;font-size:16px;font-weight:600;background:'+successBtnColor+';color:white;border:none;border-radius:8px;cursor:pointer;">'+esc(successBtnLabel)+'</button></div>';
+      document.body.appendChild(overlay);
+      var pBtn=document.getElementById('lp-pay-success-btn');
+      if(pBtn){pBtn.addEventListener('click',function(){if(successRedirect){window.location.href=successRedirect;}else{overlay.remove();window.history.replaceState({},'',window.location.pathname);}});}
+    }
+  });
+})();
+</script>
+<script data-cart>
+(function(){
+  var slug='U6nPtgkb';
+  var apiBase='https://paymegpt.com';
+  var successSubtext='';var successBtnLabel='Continue';var successBtnColor='#16a34a';var successRedirect='';
+  function findCartEmail(){
+    var ids=['email','emailAddress','buyer-email','buyerEmail','user-email','userEmail','checkout-email','customer-email','contact-email'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.includes('@'))return el.value.trim();}
+    var inputs=document.querySelectorAll('input[type="email"],input[name*="email"],input[placeholder*="email"],input[placeholder*="Email"]');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.includes('@'))return inputs[j].value.trim();}
+    return '';
+  }
+  function findCartName(){
+    var ids=['name','fullName','full-name','buyer-name','buyerName','customer-name','userName','user-name'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value)return el.value.trim();}
+    var inputs=document.querySelectorAll('input[name*="name"]:not([name*="email"]):not([type="email"]),input[placeholder*="name"]:not([placeholder*="email"]):not([type="email"]),input[placeholder*="Name"]:not([type="email"])');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value)return inputs[j].value.trim();}
+    return '';
+  }
+  function findCartPhone(){var ids=['phone','phoneNumber','phone-number','tel','telephone','mobile','mobileNumber','cell','contact-phone','buyer-phone'];for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.trim())return el.value.trim();}var inputs=document.querySelectorAll('input[type="tel"],input[name*="phone"],input[name*="tel"],input[name*="mobile"],input[placeholder*="phone"],input[placeholder*="Phone"]');for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.trim())return inputs[j].value.trim();}return '';}
+  var __realCart=function(arg){
+    var items, email='', customerName='', successUrl, cancelUrl, currency;
+    if(Array.isArray(arg)){items=arg;}
+    else if(arg&&typeof arg==='object'){
+      items=arg.items;email=arg.email||'';customerName=arg.name||arg.customerName||'';
+      successUrl=arg.successUrl;cancelUrl=arg.cancelUrl;currency=arg.currency;
+    }
+    if(!Array.isArray(items)||items.length===0){alert('No items in cart.');return Promise.reject('no_items');}
+    var cleanItems=[];var totalCents=0;
+    for(var i=0;i<items.length;i++){
+      var it=items[i];if(!it||typeof it!=='object'){alert('Invalid item at position '+i);return Promise.reject('bad_item');}
+      var nm=typeof it.name==='string'?it.name.trim():'';
+      if(!nm){alert('Item '+(i+1)+' is missing a name.');return Promise.reject('no_name');}
+      var amt=typeof it.amountCents==='number'?it.amountCents:(typeof it.amount==='number'?Math.round(it.amount*100):NaN);
+      if(!isFinite(amt)||amt<1){alert('Item "'+nm+'" needs a valid amount in cents.');return Promise.reject('bad_amount');}
+      var qty=(typeof it.quantity==='number'&&it.quantity>0)?Math.floor(it.quantity):1;
+      cleanItems.push({name:nm,description:it.description||'',amountCents:amt,quantity:qty});
+      totalCents+=amt*qty;
+    }
+    if(totalCents<50){alert('Cart total must be at least $0.50');return Promise.reject('total_too_low');}
+    if(!email)email=findCartEmail();
+    if(!customerName)customerName=findCartName();
+    var cartPhone=findCartPhone();
+    if(!email){var p=window.prompt('Enter your email for the receipt:','');if(p&&p.indexOf('@')>-1){email=p.trim();}else{alert('An email address is required to complete checkout.');return Promise.reject('no_email');}}
+    var successBase=window.location.href.split('?')[0];
+    var body={email:email,name:customerName,items:cleanItems,locale:(document.documentElement.lang||navigator.language||'en')};
+    if(currency)body.currency=currency;
+    if(cartPhone)body.phone=cartPhone;
+    body.successUrl=successUrl||(successBase+'?cart=success&email='+encodeURIComponent(email)+'&session_id={CHECKOUT_SESSION_ID}');
+    body.cancelUrl=cancelUrl||(successBase+'?cart=cancelled');
+    return fetch(apiBase+'/api/landing-pages/public/'+slug+'/cart/checkout',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(body)
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d.checkoutUrl){window.location.href=d.checkoutUrl;}
+      else{alert(d.error||'Failed to process checkout');throw new Error(d.error);}
+    });
+  };
+  try{Object.defineProperty(window,'__processCart',{value:__realCart,writable:false,configurable:false});}catch(e){window.__processCart=__realCart;}
+  document.addEventListener('DOMContentLoaded',function(){
+    var urlParams=new URLSearchParams(window.location.search);
+    if(urlParams.get('cart')==='success'){
+      var sidC=urlParams.get('session_id');
+      if(sidC){try{fetch(apiBase+'/api/landing-pages/public/'+slug+'/checkout/confirm',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:sidC})}).catch(function(){});}catch(e){}}
+      if(document.getElementById('payment-success-overlay')||document.getElementById('donation-success-overlay')||document.getElementById('cart-success-overlay'))return;
+      var overlay=document.createElement('div');overlay.id='cart-success-overlay';
+      overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:system-ui,-apple-system,sans-serif;';
+      function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+      var subTxt=successSubtext||'Thank you for your order.';
+      overlay.innerHTML='<div style="background:white;border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);"><div style="width:64px;height:64px;border-radius:50%;background:#dcfce7;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 style="margin:0 0 12px;font-size:24px;font-weight:700;color:#111827;">Order Confirmed!</h2><p style="margin:0 0 24px;color:#6b7280;font-size:16px;">'+esc(subTxt)+'</p><button id="lp-cart-success-btn" style="padding:12px 32px;font-size:16px;font-weight:600;background:'+successBtnColor+';color:white;border:none;border-radius:8px;cursor:pointer;">'+esc(successBtnLabel)+'</button></div>';
+      document.body.appendChild(overlay);
+      var cBtn=document.getElementById('lp-cart-success-btn');
+      if(cBtn){cBtn.addEventListener('click',function(){if(successRedirect){window.location.href=successRedirect;}else{overlay.remove();window.history.replaceState({},'',window.location.pathname);}});}
+    }
+  });
+})();
+</script>  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="nav" id="nav" data-section="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#hero-section">
+      <img src="https://paymegpt.com/objects/generated-images/83/1786235577415-ca1d54fb07c29187.png" alt="SAGED.AI">
+      <span>SAGED.AI</span>
+    </a>
+    <div class="nav-links">
+      <a href="#hero-section">Home</a>
+      <a href="#video">Meet Denise</a>
+      <a href="#services">Services</a>
+      <a href="#process">How It Works</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-primary nav-cta" href="https://paymegpt.com/p/8qNX2qhXY">Contact Us</a>
+    </div>
+    <button class="nav-burger" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile">
+    <a href="#hero-section">Home</a>
+    <a href="#video">Meet Denise</a>
+    <a href="#services">Services</a>
+    <a href="#process">How It Works</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://paymegpt.com/p/8qNX2qhXY">Contact Us</a>
+  </div>
+</nav>
+
+<header class="hero" id="hero-section" data-section="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div><div class="orb orb4"></div><div class="orb orb5"></div>
+  <div class="wrap hero-inner">
+    <div class="eyebrow">Atlanta-Based AI Consulting for Growing Businesses</div>
+    <h1>Your Business, Powered By AI That Actually Works</h1>
+    <p class="lead">SAGED.AI turns AI from a buzzword into a working part of your operation — smarter conversations with customers, automated busywork, and decisions backed by real data. Built for teams that don't have time to waste.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="https://calendly.com/denisedwhitfield/30min" target="_blank" rel="noopener">Book Your Free AI Audit</a>
+      <a class="btn btn-ghost" href="#video">▶ Watch Denise's Intro</a>
+    </div>
+    <div class="hero-proof">
+      <div><span>$650B+</span> in 2026 AI infrastructure spend</div>
+      <div><span>78%</span> of businesses already using AI</div>
+      <div><span>40%</span> average cost reduction via automation</div>
+    </div>
+  </div>
+</header>
+
+<div class="ticker-wrap" data-section="ticker">
+  <div class="ticker-track" id="tickerTrack">
+    <div class="tick"><span class="up">▲</span> <b>AI.GDP</b> <span class="sep">·</span> $15.7T global AI economic impact by 2030</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.CAPEX</b> <span class="sep">·</span> $650B+ Big Tech AI infrastructure spend in 2026</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.ADOPT</b> <span class="sep">·</span> 78% of businesses now use AI in at least one function</div>
+    <div class="tick"><span class="down">▼</span> <b>OPS.COST</b> <span class="sep">·</span> up to 40% lower operating costs via AI automation</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.AGENT</b> <span class="sep">·</span> 23% of organizations now scaling autonomous AI agents</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.JOBS</b> <span class="sep">·</span> 43% of workers already use AI on the job</div>
+    <div class="tick"><span class="down">▼</span> <b>RESP.TIME</b> <span class="sep">·</span> 60%+ faster customer response times with AI support</div>
+    <div class="tick"><span class="up">▲</span> <b>CHAT.MKT</b> <span class="sep">·</span> $41B conversational AI market size by 2030</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.GAP</b> <span class="sep">·</span> only 1 in 3 orgs has scaled AI past pilot — window still open</div>
+    <div class="tick"><span class="up">▲</span> <b>VOICE.AI</b> <span class="sep">·</span> voice is the fastest-growing AI interaction channel</div>
+    <div class="tick"><span class="up">▲</span> <b>SMB.GROWTH</b> <span class="sep">·</span> AI-adopting SMBs report roughly 2x faster growth than peers</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.GDP</b> <span class="sep">·</span> $15.7T global AI economic impact by 2030</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.CAPEX</b> <span class="sep">·</span> $650B+ Big Tech AI infrastructure spend in 2026</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.ADOPT</b> <span class="sep">·</span> 78% of businesses now use AI in at least one function</div>
+    <div class="tick"><span class="down">▼</span> <b>OPS.COST</b> <span class="sep">·</span> up to 40% lower operating costs via AI automation</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.AGENT</b> <span class="sep">·</span> 23% of organizations now scaling autonomous AI agents</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.JOBS</b> <span class="sep">·</span> 43% of workers already use AI on the job</div>
+    <div class="tick"><span class="down">▼</span> <b>RESP.TIME</b> <span class="sep">·</span> 60%+ faster customer response times with AI support</div>
+    <div class="tick"><span class="up">▲</span> <b>CHAT.MKT</b> <span class="sep">·</span> $41B conversational AI market size by 2030</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.GAP</b> <span class="sep">·</span> only 1 in 3 orgs has scaled AI past pilot — window still open</div>
+    <div class="tick"><span class="up">▲</span> <b>VOICE.AI</b> <span class="sep">·</span> voice is the fastest-growing AI interaction channel</div>
+    <div class="tick"><span class="up">▲</span> <b>SMB.GROWTH</b> <span class="sep">·</span> AI-adopting SMBs report roughly 2x faster growth than peers</div>
+  </div>
+</div>
+
+<section class="section video-section" id="video" data-section="video">
+  <div class="wrap">
+    <div class="video-grid">
+      <div class="video-frame reveal">
+        <video id="denisePreview" muted loop playsinline poster="https://dwhitatl.github.io/saged-ai-site/assets/automations.jpg" style="display:none">
+          <source src="https://dwhitatl.github.io/saged-ai-site/assets/denise-intro.mp4" type="video/mp4">
+        </video>
+        <div class="video-fallback" id="videoFallback">
+          <div class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="vf-title">Video Coming Soon</div>
+          <div class="vf-sub">Denise's 10-second intro will play here automatically once uploaded to <code>assets/denise-intro.mp4</code></div>
+        </div>
+      </div>
+      <div class="video-copy reveal">
+        <div class="eyebrow">Meet Your AI Strategist</div>
+        <h3>Denise Whitfield</h3>
+        <div class="role">President &amp; CEO, SAGED.AI</div>
+        <p>Denise built SAGED.AI to close the gap between "AI is powerful" and "AI is working for my business today." Every engagement starts with your operations, not a generic tech stack — so what you get back is something your team will actually use.</p>
+        <a class="btn btn-ghost" href="https://calendly.com/denisedwhitfield/30min" target="_blank" rel="noopener">Schedule Time With Denise</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section stats center" id="stats" data-section="stats">
+  <div class="wrap">
+    <div class="eyebrow">The Next 3–5 Years</div>
+    <h2 class="h2 reveal">AI Isn't Coming — It's Already Reshaping the Market</h2>
+    <p class="sub reveal">The businesses winning the next half-decade are the ones adopting now, while most of the market is still watching from the sidelines.</p>
+    <div class="stats-grid">
+      <div class="stat-card reveal"><div class="stat-num" data-count="78">0<span class="suffix">%</span></div><div class="stat-label">of businesses use AI in at least one function today</div></div>
+      <div class="stat-card reveal"><div class="stat-num" data-count="650" data-prefix="$">0<span class="suffix">B+</span></div><div class="stat-label">poured into AI infrastructure by Big Tech in 2026 alone</div></div>
+      <div class="stat-card reveal"><div class="stat-num" data-count="40">0<span class="suffix">%</span></div><div class="stat-label">average cost reduction reported from workflow automation</div></div>
+      <div class="stat-card reveal"><div class="stat-num" data-count="23">0<span class="suffix">%</span></div><div class="stat-label">of organizations now scaling autonomous AI agents</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section services center" id="services" data-section="services">
+  <div class="wrap">
+    <div class="eyebrow">What We Do</div>
+    <h2 class="h2 reveal">Our Services</h2>
+    <p class="sub reveal">Practical AI, matched to how your business actually runs.</p>
+    <div class="grid-3" style="text-align:left">
+      <div class="card reveal"><span class="chip">🧠</span><h4>AI Consulting</h4><p>Automate repetitive tasks, sharpen your digital marketing, and improve customer engagement with an AI strategy built around your goals.</p></div>
+      <div class="card reveal"><span class="chip">💬</span><h4>Conversational Assistants</h4><p>High-performing AI chatbots that handle inquiries, bookings, and FAQs 24/7 — so no lead ever waits on you.</p></div>
+      <div class="card reveal"><span class="chip">⚙️</span><h4>AI Automations</h4><p>Automate lead generation, follow-ups, and order processing with tools like Make and Zapier, cutting operational costs significantly.</p></div>
+      <div class="card reveal"><span class="chip">📊</span><h4>AI-Powered CRM</h4><p>Analyze customer behavior, predict needs, and automate personalized outreach with AI-enhanced CRM systems.</p></div>
+      <div class="card reveal"><span class="chip">🔍</span><h4>AI for SEO &amp; Content</h4><p>Create high-ranking content by analyzing search trends, optimizing keywords, and generating engaging copy at scale.</p></div>
+      <div class="card reveal"><span class="chip">📣</span><h4>Social Engagement</h4><p>AI-powered tools that automate comment replies and social responses — prompt, consistent, and always on-brand.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section process center" id="process" data-section="process">
+  <div class="wrap">
+    <div class="eyebrow">How It Works</div>
+    <h2 class="h2 reveal">From First Call to Fully Running in Three Steps</h2>
+    <p class="sub reveal">No jargon, no 6-month rollouts — just a clear path from where you are to AI that's actually working.</p>
+    <div class="steps">
+      <div class="step reveal"><div class="step-num">1</div><h4>Assess</h4><p>We map your workflows and pinpoint exactly where AI creates the fastest, most measurable win for your business.</p></div>
+      <div class="step reveal"><div class="step-num">2</div><h4>Implement</h4><p>We build and connect the assistant, automation, or CRM layer directly into the tools your team already uses.</p></div>
+      <div class="step reveal"><div class="step-num">3</div><h4>Scale</h4><p>We monitor, optimize, and expand — turning your first win into a repeatable AI advantage across the business.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section automations" id="automations" data-section="automations-marquee">
+  <div class="wrap">
+    <div class="eyebrow">Automations</div>
+    <h2 class="h2 reveal">Streamline, Automate, Grow, Elevate and Dominate</h2>
+    <p class="sub reveal" style="margin-left:auto;margin-right:auto">Unleash the full potential of integrations and automations to elevate your systems and processes for dominating any market.</p>
+    <a class="btn btn-primary" style="margin-top:30px" href="https://calendly.com/denisedwhitfield/30min" target="_blank" rel="noopener">Schedule an Appointment</a>
+    <div class="marquee">
+      <div class="marquee-track" id="marqueeTrack">
+        <img src="https://dwhitatl.github.io/saged-ai-site/assets/marquee-01.png" alt="">
+        <img src="https://dwhitatl.github.io/saged-ai-site/assets/marquee-02.png" alt="">
+        <img src="https://dwhitatl.github.io/saged-ai-site/assets/marquee-03.png" alt="">
+        <img src="https://dwhitatl.github.io/saged-ai-site/assets/marquee-04.png" alt="">
+        <img src="https://dwhitatl.github.io/saged-ai-site/assets/marquee-05.png" alt="">
+        <img src="https://dwhitatl.github.io/saged-ai-site/assets/marquee-06.png" alt="">
+        <img src="https://dwhitatl.github.io/saged-ai-site/assets/marquee-07.png" alt="">
+        <img src="https://dwhitatl.github.io/saged-ai-site/assets/marquee-08.png" alt="">
+        <img src="https://dwhitatl.github.io/saged-ai-site/assets/marquee-09.png" alt="">
+        <img src="https://dwhitatl.github.io/saged-ai-site/assets/marquee-10.png" alt="">
+      </div>
+    </div>
+    <figure class="automations-figure reveal"><img src="https://dwhitatl.github.io/saged-ai-site/assets/automations.jpg" alt="AI automations in action"></figure>
+  </div>
+</section>
+
+<section class="section testimonials center" id="testimonials" data-section="testimonials">
+  <div class="wrap">
+    <div class="eyebrow">Testimonials</div>
+    <h2 class="h2 reveal">What Our Clients Have to Say</h2>
+    <p class="sub reveal" style="margin-left:auto;margin-right:auto">Discover what our clients have to say about SAGED.AI</p>
+    <div class="grid-3" style="text-align:left">
+      <div class="card t-card reveal">
+        <blockquote>SAGED.AI's AI-powered CRM analysis offers personalized service, boosting client loyalty. Automated communications provide consistent engagement, enhancing our studio's growth and reputation with unprecedented personalization.</blockquote>
+        <div class="t-person"><img src="https://dwhitatl.github.io/saged-ai-site/assets/testimonial-michelle.jpg" alt="Michelle Simons"><div><div class="nm">Michelle Simons</div><div class="rl">Owner at Yoga Studio</div></div></div>
+      </div>
+      <div class="card t-card reveal">
+        <blockquote>SAGED.AI's AI solutions personalize shopping, enhancing conversions with tailored recommendations. AI-powered chatbots efficiently handle queries. We foresee its potential in streamlining Customer Service and HR.</blockquote>
+        <div class="t-person"><img src="https://dwhitatl.github.io/saged-ai-site/assets/testimonial-ava.jpg" alt="Ava Richardson"><div><div class="nm">Ava Richardson</div><div class="rl">Founder at E-Commerce Brand</div></div></div>
+      </div>
+      <div class="card t-card reveal">
+        <blockquote>SAGED.AI's AI revolutionized our firm, streamlining tasks and boosting efficiency. Its rapid data processing enhances client-focused work, promising growth in Sales and Customer Service.</blockquote>
+        <div class="t-person"><img src="https://dwhitatl.github.io/saged-ai-site/assets/testimonial-michael.jpg" alt="Michael Johnson"><div><div class="nm">Michael Johnson</div><div class="rl">CEO at CPA Firm</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section pricing center" id="pricing" data-section="pricing">
+  <div class="wrap">
+    <div class="eyebrow">Pricing</div>
+    <h2 class="h2 reveal">SAGED.AI Pricing Plans</h2>
+    <p class="sub reveal" style="margin-left:auto;margin-right:auto">Flexible plans designed to meet your business wherever it is in the AI journey.</p>
+    <div class="p-toggle">Monthly</div>
+    <div class="p-grid">
+      <div class="p-card reveal">
+        <h4>Essential AI</h4>
+        <div class="p-price">$499 <small>/ month</small></div>
+        <p class="p-desc">💡 Engage visitors and automate conversations with a smart AI chatbot that answers FAQs and captures leads 24/7. Perfect for businesses new to AI.</p>
+        <ul class="p-list">
+          <li class="hdr">What's included</li>
+          <li>AI Readiness Audit</li>
+          <li>Basic AI Chatbot Setup</li>
+          <li>AI-Powered Social Media Strategy</li>
+          <li>Basic 60-day Business Analysis</li>
+          <li>30-Minute Strategy Session</li>
+        </ul>
+        <p class="p-note">📅 Start automating today – book a consultation!</p>
+        <a class="btn btn-primary" href="https://account.disruptmotion.com/services/0ccdae052a0d467469483d2efebde470/checkouts" target="_blank" rel="noopener">Subscribe</a>
+      </div>
+      <div class="p-card featured reveal">
+        <h4>Growth AI Accelerator</h4>
+        <div class="p-price">$799 <small>/ month</small></div>
+        <p class="p-desc">🚀 Upgrade your AI Assistant into a full CRM, email responder, and VIP program manager — streamlining operations and driving revenue.</p>
+        <ul class="p-list">
+          <li class="hdr">What's included</li>
+          <li>Everything in the Essential Plan</li>
+          <li>Agentic AI Assistant</li>
+          <li>Business Intelligence and Analytics</li>
+          <li>Customer Relationship Management</li>
+          <li>Workflow Automation</li>
+          <li>45-Minute Strategy Session</li>
+        </ul>
+        <p class="p-note">📅 Start automating today – book a consultation!</p>
+        <a class="btn btn-primary" href="https://account.disruptmotion.com/services/0ccdae052a0d467469483d2efebde470/checkouts" target="_blank" rel="noopener">Subscribe</a>
+      </div>
+      <div class="p-card reveal">
+        <h4>Enterprise AI</h4>
+        <div class="p-price" style="font-size:28px;line-height:1.3">Call Us for Pricing</div>
+        <p class="p-desc">🚀 Bespoke AI automation, advanced analytics, and executive-level strategy built for scalability and market dominance.</p>
+        <ul class="p-list">
+          <li class="hdr">What's included</li>
+          <li>Everything in Essential and Growth</li>
+          <li>Omnichannel AI Assistant</li>
+          <li>AI-Powered Document Automation</li>
+          <li>Enterprise Analytics &amp; Forecasting</li>
+          <li>Dedicated Executive AI Advisor</li>
+          <li>60-Minute Strategy Call with a Senior Executive</li>
+        </ul>
+        <p class="p-note">📅 Start automating today – book a consultation!</p>
+        <a class="btn btn-ghost" href="https://paymegpt.com/p/8qNX2qhXY">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section faq center" id="faq" data-section="faq">
+  <div class="wrap">
+    <div class="eyebrow">FAQ</div>
+    <h2 class="h2 reveal">Get Your Questions Answered</h2>
+    <p class="sub reveal" style="margin-left:auto;margin-right:auto">Answers to what business owners ask us most.</p>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>What does SAGED.AI specialize in?</summary>
+        <div class="faq-body">SAGED.AI specializes in AI-driven business transformation for small and medium-sized businesses. We provide conversational AI, agentic AI solutions, workflow automation, predictive analytics, and AI-driven business intelligence to help companies streamline operations, automate tasks, and scale profitability.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How can AI help my business scale and become more profitable?</summary>
+        <div class="faq-body">AI accelerates growth by automating repetitive tasks, optimizing decision-making, and improving efficiency:
+• Reduce operational costs by up to 40% through workflow automation.
+• Increase sales and revenue with AI-driven lead generation and conversion optimization.
+• Improve customer experience through AI-powered support, cutting response times by 60% or more.
+• Enhance business intelligence with data-driven strategic insight.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What is Agentic AI, and how does it benefit my business?</summary>
+        <div class="faq-body">Agentic AI goes beyond answering questions — it takes action, planning and executing multi-step tasks on its own. That means an assistant that follows up on leads, books appointments, and updates your CRM automatically, with workflows that run end-to-end without manual handoffs.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How does AI-powered Conversational AI differ from traditional chatbots?</summary>
+        <div class="faq-body">Traditional chatbots follow rigid scripts. AI-powered Conversational AI understands natural language, context, and intent — trained on your company's own data, handling bookings, lead capture, and follow-up in the same conversation, and improving over time.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What are the top AI trends for 2026 that businesses should prepare for?</summary>
+        <div class="faq-body">• Agentic AI at scale: nearly 1 in 4 organizations now deploying agents that complete multi-step tasks autonomously.
+• The $650B infrastructure boom making powerful AI cheaper and more accessible to SMBs.
+• Hyper-personalization of offers, content, and outreach.
+• Voice AI as the fastest-growing AI channel.
+• Expanding AI governance and regulation.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Is AI difficult to implement in small and medium-sized businesses?</summary>
+        <div class="faq-body">Not with the right partner. Most SAGED.AI solutions integrate with the tools you already use — your website, calendar, CRM, and social channels — and implementation is handled for you from setup through launch, with measurable results starting in high-impact areas first.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How do I get started with AI at SAGED.AI?</summary>
+        <div class="faq-body">1. Schedule a free consultation to discuss your business challenges and AI goals.
+2. Our team assesses your needs and proposes a tailored AI strategy.
+3. We implement AI-driven solutions, ensuring seamless integration and measurable impact.
+4. Ongoing support and optimization to maximize efficiency and ROI.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section final-cta">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center">Ready When You Are</div>
+    <h2 class="h2 reveal">The AI Gap Is Closing Fast. Don't Watch From the Sidelines.</h2>
+    <p class="sub reveal" style="margin-left:auto;margin-right:auto">Book a free 30-minute AI audit and leave with a clear, practical plan — not a sales pitch.</p>
+    <div class="hero-ctas" style="margin-top:32px">
+      <a class="btn btn-amber" href="https://calendly.com/denisedwhitfield/30min" target="_blank" rel="noopener">Book Your Free AI Audit</a>
+      <a class="btn btn-ghost" href="https://paymegpt.com/p/8qNX2qhXY">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" data-section="footer">
+  <div class="wrap">
+    <div class="footer-logo">
+      <img src="https://paymegpt.com/objects/generated-images/83/1786235577415-ca1d54fb07c29187.png" alt="SAGED.AI">
+      <span>SAGED.AI</span>
+    </div>
+    <p class="footer-tag">Atlanta, GA — AI Consulting for Small &amp; Medium-Sized Businesses</p>
+    <p class="copyright">© 2026 SAGED.AI</p>
+  </div>
+</footer>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
