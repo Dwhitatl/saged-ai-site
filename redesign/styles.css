@@ -232,3 +232,6 @@ h1,h2,h3,h4,h5,p{margin:0}
   .nav-links{display:none}
   .nav-burger{display:block}
 }
+
+.f-icon{height:70px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+    .f-icon img{height:70px;width:auto;display:block}
