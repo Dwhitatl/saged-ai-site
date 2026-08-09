@@ -6,13 +6,11 @@
   var track = document.getElementById('marqueeTrack');
   if(track){ track.innerHTML += track.innerHTML; }
 
-  var reveals = document.querySelectorAll('.reveal');
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {threshold:.15});
-  reveals.forEach(function(el){ io.observe(el); });
+  }, {threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
-  var counters = document.querySelectorAll('.stat-num');
   var cio = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){
@@ -21,12 +19,11 @@
         var prefix = el.getAttribute('data-prefix') || '';
         var suffixEl = el.querySelector('.suffix');
         var suffixHTML = suffixEl ? suffixEl.outerHTML : '';
-        var dur = 1400, start = null;
+        var dur = 1300, start = null;
         function step(ts){
           if(!start) start = ts;
           var p = Math.min((ts-start)/dur,1);
-          var val = Math.floor(p*target);
-          el.innerHTML = prefix + val + suffixHTML;
+          el.innerHTML = prefix + Math.floor(p*target) + suffixHTML;
           if(p<1) requestAnimationFrame(step);
         }
         requestAnimationFrame(step);
@@ -34,7 +31,7 @@
       }
     });
   }, {threshold:.4});
-  counters.forEach(function(el){ cio.observe(el); });
+  document.querySelectorAll('.stat-num').forEach(function(el){ cio.observe(el); });
 
   var vid = document.getElementById('denisePreview');
   var fallback = document.getElementById('videoFallback');
@@ -54,8 +51,7 @@
 })();
 
 (function () {
-    const CHAT_COLOR = '#000';
-    const CHAT_TITLE = '';
+    const CHAT_COLOR = '#0EA48A';
     const ACCOUNT_ID = '1605006';
     const CHATBOT_ID = 'TPMVAgTlLyk';
     const BUTTON_IMAGE_URL = 'https://storage.googleapis.com/wttus/assets/57/a/1605006/images/Avator-for%20Chat%20bubble%202-16-2025.png';
@@ -93,6 +89,7 @@
             opacity: 0;
             will-change: transform, opacity;
             backface-visibility: hidden;
+            box-shadow: 0 24px 70px rgba(12,22,32,.28);
         }
         @media(max-width:768px) {
             #chat-container {
@@ -103,22 +100,19 @@
                 top: 0;
                 transform: translate(0, 110%);
             }
-            #chat-button.hidden {
-                display: none !important;
-            }
         }
         #chat-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: linear-gradient(135deg, ${CHAT_COLOR}, #36d6b5);
+            background: #fff;
             border: none;
             border-radius: 50%;
-            width: 60px;
-            height: 60px;
+            width: 62px;
+            height: 62px;
             cursor: pointer;
             z-index: 10000;
-            box-shadow: 0 0 15px 5px #36d6b5;
+            box-shadow: 0 6px 24px rgba(14,164,138,.4);
             animation: floatButton 3s infinite ease;
             display: flex;
             align-items: center;
@@ -137,10 +131,9 @@
             width: 35px;
             height: 35px;
             background: transparent;
-            color: #fff;
+            color: #0C1620;
             border: none;
             font-size: 30px;
-            border-radius: 0;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -181,7 +174,7 @@
 
     const button = document.createElement('button');
     button.id = "chat-button";
-    button.innerHTML = `<img id="chat-icon" src="${BUTTON_IMAGE_URL}" alt="Chat Button" style="width:65px; height:65px;">`;
+    button.innerHTML = `<img id="chat-icon" src="${BUTTON_IMAGE_URL}" alt="Chat" style="width:62px; height:62px;">`;
     document.body.appendChild(button);
 
     function openChat() {
@@ -239,7 +232,5 @@
 
     const script = document.createElement('script');
     script.src = 'https://app.chatgptbuilder.io/webchat/plugin.js?v=6';
-    script.onload = () => { console.log('Chat plugin loaded.'); };
-    script.onerror = () => { console.error('Webchat script failed to load.'); };
     document.body.appendChild(script);
 })();
