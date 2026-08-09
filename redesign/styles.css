@@ -204,15 +204,16 @@ h1,h2,h3,h4,h5,p{margin:0}
 .faq-item[open] summary::after{transform:rotate(45deg)}
 .faq-body{padding:0 24px 22px;color:var(--muted);font-size:15px;white-space:pre-line}
 
+.ask-start{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:28px 22px;text-align:center;box-shadow:0 8px 26px var(--shadow)}
+.ask-start.off{display:none}
+.ask-start .ask-eyebrow{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px}
+.ask-start p{color:var(--muted);font-size:14.5px;margin-bottom:16px}
 .ask-inline{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card);box-shadow:0 8px 26px var(--shadow)}
 .ask-inline.off{display:none}
 .ask-inline-head{display:flex;align-items:center;justify-content:space-between;gap:10px;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);padding:12px 14px;border-bottom:1px solid var(--line);text-align:left}
 .ask-inline iframe{display:block;width:100%;height:640px;border:none;background:var(--card)}
 .ask-x{background:transparent;border:none;color:var(--muted-2);font-size:22px;line-height:1;cursor:pointer;padding:0 2px;transition:color .18s}
 .ask-x:hover{color:var(--gold)}
-.ask-restart{display:none;border:1px solid var(--line);border-radius:12px;background:var(--card);padding:30px 20px;text-align:center}
-.ask-restart.on{display:block}
-.ask-restart p{color:var(--muted);font-size:14.5px;margin-bottom:14px}
 
 .final-cta .h2{color:#FFFDF8}
 .final-cta .sub{color:#9DB5B3}
@@ -253,7 +254,6 @@ h1,h2,h3,h4,h5,p{margin:0}
   .nav-burger{display:block}
 }
 
-/* Stats band — compact, four across, staggered reveal */
 #stats{padding-top:62px;padding-bottom:62px}
 #stats .sub{margin-top:12px}
 #stats .stats-grid{grid-template-columns:repeat(4,1fr);margin-top:34px}
