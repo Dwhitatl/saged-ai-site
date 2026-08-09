@@ -188,6 +188,7 @@ h1,h2,h3,h4,h5,p{margin:0}
 .p-list li:not(.hdr)::before{content:"✓";position:absolute;left:0;color:var(--sage);font-weight:700}
 .p-note{margin-top:20px;color:var(--muted-2);font-size:13px}
 .p-card .btn{margin-top:22px;width:100%}
+.p-foot{margin-top:30px;color:var(--muted-2);font-size:13.5px}
 
 .faq{background:var(--surface-2)}
 .faq-layout{display:grid;grid-template-columns:330px 1fr;gap:56px;align-items:start;text-align:left}
