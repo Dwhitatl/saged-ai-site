@@ -84,7 +84,7 @@ h1,h2,h3,h4,h5,p{margin:0}
 .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);animation:blink 2.2s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.45}}
 .hero h1{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(42px,6vw,70px);line-height:1.02;color:var(--ink)}
-.hero h1 em{font-style:italic;color:var(--teal);white-space:nowrap}
+.hero h1 em{font-style:italic;color:var(--teal)}
 .hero .lead{color:var(--muted);font-size:18px;max-width:520px;margin-top:22px}
 .hero-ctas{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
 .hero-meta{margin-top:30px;color:var(--muted-2);font-size:13.5px}
@@ -163,16 +163,7 @@ h1,h2,h3,h4,h5,p{margin:0}
 .why-points li{background:rgba(255,253,248,.05);border:1px solid rgba(255,253,248,.12);border-radius:11px;padding:26px 22px;color:#CFDEDC;font-size:15px;line-height:1.55}
 .why-points li::before{content:"";display:block;width:26px;height:2px;background:var(--gold);margin-bottom:16px}
 
-.testimonials{background:var(--surface-2)}
-.t-card{display:flex;flex-direction:column;gap:18px}
-.t-card blockquote{margin:0;color:var(--body);font-size:15.5px;line-height:1.65}
-.quote-mark{font-family:"Cormorant Garamond",serif;font-size:52px;line-height:.55;color:var(--gold)}
-.t-person{display:flex;align-items:center;gap:13px;border-top:1px solid var(--line);padding-top:18px}
-.t-person img{width:46px;height:46px;border-radius:50%;object-fit:cover}
-.t-person .nm{font-weight:600;font-size:15px;color:var(--ink)}
-.t-person .rl{color:var(--muted);font-size:13px}
-
-.pricing{background:var(--surface)}
+.pricing{background:var(--surface-2)}
 .p-toggle{display:inline-flex;margin:34px auto 0;background:var(--teal-soft);border-radius:999px;padding:7px 20px;font-weight:600;font-size:13px;color:var(--teal);letter-spacing:.05em}
 .p-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px;align-items:stretch;text-align:left}
 .p-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:36px 30px;display:flex;flex-direction:column}
@@ -190,7 +181,7 @@ h1,h2,h3,h4,h5,p{margin:0}
 .p-card .btn{margin-top:22px;width:100%}
 .p-foot{margin-top:30px;color:var(--muted-2);font-size:13.5px}
 
-.faq{background:var(--surface-2)}
+.faq{background:var(--surface)}
 .faq-layout{display:grid;grid-template-columns:330px 1fr;gap:56px;align-items:start;text-align:left}
 .faq-aside{position:sticky;top:100px}
 .faq-photo{position:relative;border-radius:12px;overflow:hidden;box-shadow:0 20px 46px var(--shadow-2);margin-bottom:24px;background:var(--surface-3)}
