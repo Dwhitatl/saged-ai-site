@@ -1,21 +1,17 @@
 (function(){
-  // mobile nav close on link click
   document.querySelectorAll('.nav-mobile a').forEach(function(a){
     a.addEventListener('click', function(){ document.getElementById('nav').classList.remove('open'); });
   });
 
-  // duplicate marquee for seamless loop
   var track = document.getElementById('marqueeTrack');
   if(track){ track.innerHTML += track.innerHTML; }
 
-  // reveal on scroll
   var reveals = document.querySelectorAll('.reveal');
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, {threshold:.15});
   reveals.forEach(function(el){ io.observe(el); });
 
-  // count-up stats
   var counters = document.querySelectorAll('.stat-num');
   var cio = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
@@ -40,7 +36,6 @@
   }, {threshold:.4});
   counters.forEach(function(el){ cio.observe(el); });
 
-  // video: if the real clip exists, show it; otherwise keep the fallback card
   var vid = document.getElementById('denisePreview');
   var fallback = document.getElementById('videoFallback');
   if(vid){
