@@ -14,7 +14,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 
 
 <!-- SEO Meta Tags -->
@@ -317,16 +317,15 @@
 <body>
 <nav class="nav" id="nav" data-section="nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="#hero-section">
+    <a class="nav-logo" href="#top">
       <img src="https://paymegpt.com/objects/generated-images/83/1786235577415-ca1d54fb07c29187.png" alt="SAGED.AI">
       <span>SAGED.AI</span>
     </a>
     <div class="nav-links">
-      <a href="#hero-section">Home</a>
-      <a href="#video">Meet Denise</a>
       <a href="#services">Services</a>
       <a href="#process">How It Works</a>
-      <a href="#about">Why Us</a>
+      <a href="#why">Why Us</a>
+      <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
       <a class="btn btn-primary nav-cta" href="https://paymegpt.com/p/8qNX2qhXY">Contact Us</a>
     </div>
@@ -335,150 +334,75 @@
     </button>
   </div>
   <div class="nav-mobile">
-    <a href="#hero-section">Home</a>
-    <a href="#video">Meet Denise</a>
     <a href="#services">Services</a>
     <a href="#process">How It Works</a>
-    <a href="#about">Why Us</a>
+    <a href="#why">Why Us</a>
+    <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
     <a href="https://paymegpt.com/p/8qNX2qhXY">Contact Us</a>
   </div>
 </nav>
 
-<header class="hero" id="hero-section" data-section="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div><div class="orb orb4"></div><div class="orb orb5"></div>
-  <div class="wrap hero-inner">
-    <div class="eyebrow">Atlanta-Based AI Consulting for Growing Businesses</div>
-    <h1>Your Business, Powered By AI That Actually Works</h1>
-    <p class="lead">SAGED.AI turns AI from a buzzword into a working part of your operation — smarter conversations with customers, automated busywork, and decisions backed by real data. Built for teams that don't have time to waste.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-primary" href="https://calendly.com/denisedwhitfield/30min" target="_blank" rel="noopener">Book Your Free AI Audit</a>
-      <a class="btn btn-ghost" href="#video">▶ Watch Denise's Intro</a>
+<header class="hero" id="top" data-section="hero">
+  <div class="hero-dots"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="badge"><span class="dot"></span> Atlanta-based · Serving growing businesses nationwide</div>
+      <h1>AI that earns its place in <em>your business</em>.</h1>
+      <p class="lead">SAGED.AI turns AI from a headline into working infrastructure — assistants that answer customers around the clock, automations that clear the busywork, and reporting that finally tells you something useful.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-teal" href="https://calendly.com/denisedwhitfield/30min" target="_blank" rel="noopener">Book a Free AI Audit</a>
+        <a class="btn btn-out" href="#services">Explore Services</a>
+      </div>
+      <div class="hero-meta">30-minute call · <b>No cost, no pitch</b> · You leave with a plan either way</div>
     </div>
-    <div class="hero-proof">
-      <div><span>$650B+</span> in 2026 AI infrastructure spend</div>
-      <div><span>78%</span> of businesses already using AI</div>
-      <div><span>40%</span> average cost reduction via automation</div>
+    <div class="hero-media reveal">
+      <div class="hero-video">
+        <video id="denisePreview" muted loop playsinline poster="https://paymegpt.com/objects/quick-uploads/83/cd32a577b4017c98.jpg" style="display:none">
+          <source src="https://dwhitatl.github.io/saged-ai-site/assets/denise-intro.mp4" type="video/mp4">
+        </video>
+        <div class="video-fallback" id="videoFallback">
+          <div class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="vf-title">A word from Denise</div>
+          <div class="vf-sub">Clip loads here once the mp4 is hosted</div>
+        </div>
+      </div>
+      <div class="hero-caption">
+        <b>Denise Whitfield</b>
+        <span>President &amp; CEO</span>
+      </div>
     </div>
   </div>
 </header>
 
 <div class="ticker-wrap" data-section="ticker">
-  <div class="ticker-track" id="tickerTrack">
-    <div class="tick"><span class="up">▲</span> <b>AI.GDP</b> <span class="sep">·</span> $15.7T global AI economic impact by 2030</div>
-    <div class="tick"><span class="up">▲</span> <b>AI.CAPEX</b> <span class="sep">·</span> $650B+ Big Tech AI infrastructure spend in 2026</div>
-    <div class="tick"><span class="up">▲</span> <b>AI.ADOPT</b> <span class="sep">·</span> 78% of businesses now use AI in at least one function</div>
-    <div class="tick"><span class="down">▼</span> <b>OPS.COST</b> <span class="sep">·</span> up to 40% lower operating costs via AI automation</div>
-    <div class="tick"><span class="up">▲</span> <b>AI.AGENT</b> <span class="sep">·</span> 23% of organizations now scaling autonomous AI agents</div>
-    <div class="tick"><span class="up">▲</span> <b>AI.JOBS</b> <span class="sep">·</span> 43% of workers already use AI on the job</div>
-    <div class="tick"><span class="down">▼</span> <b>RESP.TIME</b> <span class="sep">·</span> 60%+ faster customer response times with AI support</div>
-    <div class="tick"><span class="up">▲</span> <b>CHAT.MKT</b> <span class="sep">·</span> $41B conversational AI market size by 2030</div>
-    <div class="tick"><span class="up">▲</span> <b>AI.GAP</b> <span class="sep">·</span> only 1 in 3 orgs has scaled AI past pilot — window still open</div>
-    <div class="tick"><span class="up">▲</span> <b>VOICE.AI</b> <span class="sep">·</span> voice is the fastest-growing AI interaction channel</div>
-    <div class="tick"><span class="up">▲</span> <b>SMB.GROWTH</b> <span class="sep">·</span> AI-adopting SMBs report roughly 2x faster growth than peers</div>
-    <div class="tick"><span class="up">▲</span> <b>AI.GDP</b> <span class="sep">·</span> $15.7T global AI economic impact by 2030</div>
-    <div class="tick"><span class="up">▲</span> <b>AI.CAPEX</b> <span class="sep">·</span> $650B+ Big Tech AI infrastructure spend in 2026</div>
-    <div class="tick"><span class="up">▲</span> <b>AI.ADOPT</b> <span class="sep">·</span> 78% of businesses now use AI in at least one function</div>
-    <div class="tick"><span class="down">▼</span> <b>OPS.COST</b> <span class="sep">·</span> up to 40% lower operating costs via AI automation</div>
-    <div class="tick"><span class="up">▲</span> <b>AI.AGENT</b> <span class="sep">·</span> 23% of organizations now scaling autonomous AI agents</div>
-    <div class="tick"><span class="up">▲</span> <b>AI.JOBS</b> <span class="sep">·</span> 43% of workers already use AI on the job</div>
-    <div class="tick"><span class="down">▼</span> <b>RESP.TIME</b> <span class="sep">·</span> 60%+ faster customer response times with AI support</div>
-    <div class="tick"><span class="up">▲</span> <b>CHAT.MKT</b> <span class="sep">·</span> $41B conversational AI market size by 2030</div>
-    <div class="tick"><span class="up">▲</span> <b>AI.GAP</b> <span class="sep">·</span> only 1 in 3 orgs has scaled AI past pilot — window still open</div>
-    <div class="tick"><span class="up">▲</span> <b>VOICE.AI</b> <span class="sep">·</span> voice is the fastest-growing AI interaction channel</div>
-    <div class="tick"><span class="up">▲</span> <b>SMB.GROWTH</b> <span class="sep">·</span> AI-adopting SMBs report roughly 2x faster growth than peers</div>
+  <div class="ticker-track">
+    <div class="tick"><span class="up">▲</span> <b>AI.GDP</b> · $15.7T global AI economic impact by 2030</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.CAPEX</b> · $650B+ Big Tech AI infrastructure spend in 2026</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.ADOPT</b> · 78% of businesses use AI in at least one function</div>
+    <div class="tick"><span class="down">▼</span> <b>OPS.COST</b> · up to 40% lower operating costs via automation</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.AGENT</b> · 23% of organizations now scaling autonomous agents</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.JOBS</b> · 43% of workers already use AI on the job</div>
+    <div class="tick"><span class="down">▼</span> <b>RESP.TIME</b> · 60%+ faster customer response with AI support</div>
+    <div class="tick"><span class="up">▲</span> <b>CHAT.MKT</b> · $41B conversational AI market size by 2030</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.GAP</b> · only 1 in 3 orgs has scaled AI past pilot stage</div>
+    <div class="tick"><span class="up">▲</span> <b>VOICE.AI</b> · fastest-growing AI interaction channel</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.GDP</b> · $15.7T global AI economic impact by 2030</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.CAPEX</b> · $650B+ Big Tech AI infrastructure spend in 2026</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.ADOPT</b> · 78% of businesses use AI in at least one function</div>
+    <div class="tick"><span class="down">▼</span> <b>OPS.COST</b> · up to 40% lower operating costs via automation</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.AGENT</b> · 23% of organizations now scaling autonomous agents</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.JOBS</b> · 43% of workers already use AI on the job</div>
+    <div class="tick"><span class="down">▼</span> <b>RESP.TIME</b> · 60%+ faster customer response with AI support</div>
+    <div class="tick"><span class="up">▲</span> <b>CHAT.MKT</b> · $41B conversational AI market size by 2030</div>
+    <div class="tick"><span class="up">▲</span> <b>AI.GAP</b> · only 1 in 3 orgs has scaled AI past pilot stage</div>
+    <div class="tick"><span class="up">▲</span> <b>VOICE.AI</b> · fastest-growing AI interaction channel</div>
   </div>
 </div>
 
-<section class="section video-section" id="video" data-section="video">
+<section class="logos" data-section="logos">
   <div class="wrap">
-    <div class="video-grid">
-      <div class="video-frame reveal">
-        <video id="denisePreview" muted loop playsinline poster="https://dwhitatl.github.io/saged-ai-site/assets/denise-poster.jpg" style="display:none">
-          <source src="https://dwhitatl.github.io/saged-ai-site/assets/denise-intro.mp4" type="video/mp4">
-        </video>
-        <div class="video-fallback" id="videoFallback">
-          <div class="play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="vf-title">Video Coming Soon</div>
-          <div class="vf-sub">Denise's intro plays here as soon as denise-intro.mp4 is added to the repo assets folder.</div>
-        </div>
-      </div>
-      <div class="video-copy reveal">
-        <div class="eyebrow">Meet Your AI Strategist</div>
-        <h3>Denise Whitfield</h3>
-        <div class="role">President &amp; CEO, SAGED.AI</div>
-        <p>Denise built SAGED.AI to close the gap between "AI is powerful" and "AI is working for my business today." Every engagement starts with your operations, not a generic tech stack — so what you get back is something your team will actually use.</p>
-        <a class="btn btn-ghost" href="https://calendly.com/denisedwhitfield/30min" target="_blank" rel="noopener">Schedule Time With Denise</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section stats center" id="stats" data-section="stats">
-  <div class="wrap">
-    <div class="eyebrow">The Next 3–5 Years</div>
-    <h2 class="h2 reveal">AI Isn't Coming — It's Already Reshaping the Market</h2>
-    <p class="sub reveal">The businesses winning the next half-decade are the ones adopting now, while most of the market is still watching from the sidelines.</p>
-    <div class="stats-grid">
-      <div class="stat-card reveal"><div class="stat-num" data-count="78">0<span class="suffix">%</span></div><div class="stat-label">of businesses use AI in at least one function today</div></div>
-      <div class="stat-card reveal"><div class="stat-num" data-count="650" data-prefix="$">0<span class="suffix">B+</span></div><div class="stat-label">poured into AI infrastructure by Big Tech in 2026 alone</div></div>
-      <div class="stat-card reveal"><div class="stat-num" data-count="40">0<span class="suffix">%</span></div><div class="stat-label">average cost reduction reported from workflow automation</div></div>
-      <div class="stat-card reveal"><div class="stat-num" data-count="23">0<span class="suffix">%</span></div><div class="stat-label">of organizations now scaling autonomous AI agents</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="section services center" id="services" data-section="services">
-  <div class="wrap">
-    <div class="eyebrow">What We Do</div>
-    <h2 class="h2 reveal">Our Services</h2>
-    <p class="sub reveal">Practical AI, matched to how your business actually runs.</p>
-    <div class="grid-3" style="text-align:left">
-      <div class="card reveal"><span class="chip">🧠</span><h4>AI Consulting</h4><p>Automate repetitive tasks, sharpen your digital marketing, and improve customer engagement with an AI strategy built around your goals.</p></div>
-      <div class="card reveal"><span class="chip">💬</span><h4>Conversational Assistants</h4><p>High-performing AI chatbots that handle inquiries, bookings, and FAQs 24/7 — so no lead ever waits on you.</p></div>
-      <div class="card reveal"><span class="chip">⚙️</span><h4>AI Automations</h4><p>Automate lead generation, follow-ups, and order processing with tools like Make and Zapier, cutting operational costs significantly.</p></div>
-      <div class="card reveal"><span class="chip">📊</span><h4>AI-Powered CRM</h4><p>Analyze customer behavior, predict needs, and automate personalized outreach with AI-enhanced CRM systems.</p></div>
-      <div class="card reveal"><span class="chip">🔍</span><h4>AI for SEO &amp; Content</h4><p>Create high-ranking content by analyzing search trends, optimizing keywords, and generating engaging copy at scale.</p></div>
-      <div class="card reveal"><span class="chip">📣</span><h4>Social Engagement</h4><p>AI-powered tools that automate comment replies and social responses — prompt, consistent, and always on-brand.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section process center" id="process" data-section="process">
-  <div class="wrap">
-    <div class="eyebrow">How It Works</div>
-    <h2 class="h2 reveal">From First Call to Fully Running in Three Steps</h2>
-    <p class="sub reveal">No jargon, no 6-month rollouts — just a clear path from where you are to AI that's actually working.</p>
-    <div class="steps">
-      <div class="step reveal"><div class="step-num">1</div><h4>Assess</h4><p>We map your workflows and pinpoint exactly where AI creates the fastest, most measurable win for your business.</p></div>
-      <div class="step reveal"><div class="step-num">2</div><h4>Implement</h4><p>We build and connect the assistant, automation, or CRM layer directly into the tools your team already uses.</p></div>
-      <div class="step reveal"><div class="step-num">3</div><h4>Scale</h4><p>We monitor, optimize, and expand — turning your first win into a repeatable AI advantage across the business.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section about" id="about" data-section="about">
-  <div class="wrap">
-    <div class="eyebrow">Why SAGED.AI</div>
-    <h2 class="h2 reveal">A Real Strategist, Not a Software Vendor</h2>
-    <p class="sub reveal" style="margin-left:auto;margin-right:auto">Most AI companies hand you a tool and wish you luck. SAGED.AI works your business first, technology second — so you get the specific capabilities that move your numbers, and nothing you'll never use.</p>
-    <ul class="about-points">
-      <li class="reveal">Led by an MBA-credentialed strategist, not a sales team</li>
-      <li class="reveal">Built around your existing tools, not a rip-and-replace</li>
-      <li class="reveal">Measurable outcomes defined before we build anything</li>
-      <li class="reveal">Ongoing optimization, so results compound over time</li>
-    </ul>
-  </div>
-</section>
-
-<section class="section automations" id="automations" data-section="automations-marquee">
-  <div class="wrap">
-    <div class="eyebrow">Automations</div>
-    <h2 class="h2 reveal">Streamline, Automate, Grow, Elevate and Dominate</h2>
-    <p class="sub reveal" style="margin-left:auto;margin-right:auto">Unleash the full potential of integrations and automations to elevate your systems and processes for dominating any market.</p>
-    <a class="btn btn-primary" style="margin-top:30px" href="https://calendly.com/denisedwhitfield/30min" target="_blank" rel="noopener">Schedule an Appointment</a>
+    <div class="logos-label">Built on the platforms your business already runs on</div>
     <div class="marquee">
       <div class="marquee-track" id="marqueeTrack">
         <img src="https://dwhitatl.github.io/saged-ai-site/assets/marquee-01.png" alt="">
@@ -493,27 +417,85 @@
         <img src="https://dwhitatl.github.io/saged-ai-site/assets/marquee-10.png" alt="">
       </div>
     </div>
-    <figure class="automations-figure reveal"><img src="https://dwhitatl.github.io/saged-ai-site/assets/automations.jpg" alt="AI automations in action"></figure>
+  </div>
+</section>
+
+<section class="section stats center" id="stats" data-section="stats">
+  <div class="wrap">
+    <div class="eyebrow">The Next 3–5 Years</div>
+    <h2 class="h2 reveal">The market is repricing around AI. Quietly, and fast.</h2>
+    <p class="sub reveal">Most of the gains are still going to companies that moved early. The window where "early" still counts is closing.</p>
+    <div class="stats-grid">
+      <div class="stat-card reveal"><div class="stat-num" data-count="78">0<span class="suffix">%</span></div><div class="stat-label">of businesses use AI in at least one function today</div></div>
+      <div class="stat-card reveal"><div class="stat-num" data-count="650" data-prefix="$">0<span class="suffix">B+</span></div><div class="stat-label">in Big Tech AI infrastructure spending in 2026 alone</div></div>
+      <div class="stat-card reveal"><div class="stat-num" data-count="40">0<span class="suffix">%</span></div><div class="stat-label">average cost reduction reported from workflow automation</div></div>
+      <div class="stat-card reveal"><div class="stat-num" data-count="23">0<span class="suffix">%</span></div><div class="stat-label">of organizations now scaling autonomous AI agents</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section services" id="services" data-section="services">
+  <div class="wrap">
+    <div class="eyebrow">What We Do</div>
+    <h2 class="h2 reveal">Six ways we put AI to work</h2>
+    <p class="sub reveal">Every engagement starts with your operation — not a product catalog.</p>
+    <div class="grid-3">
+      <div class="card reveal"><span class="chip">🧭</span><h4>AI Consulting</h4><p>A clear-eyed audit of where AI actually pays off in your business, and a sequenced plan to get there without disrupting what already works.</p></div>
+      <div class="card reveal"><span class="chip">💬</span><h4>Conversational Assistants</h4><p>Assistants trained on your own material that handle inquiries, bookings, and FAQs around the clock — so no lead ever sits waiting.</p></div>
+      <div class="card reveal"><span class="chip">⚙️</span><h4>Workflow Automation</h4><p>Lead capture, follow-up, and order processing running end to end, connected through the tools your team already opens every morning.</p></div>
+      <div class="card reveal"><span class="chip">📊</span><h4>AI-Powered CRM</h4><p>Customer data that predicts rather than just records — surfacing who's ready to buy and automating the outreach that gets them there.</p></div>
+      <div class="card reveal"><span class="chip">🔍</span><h4>Search &amp; Content</h4><p>Content built to rank, informed by real search behavior, produced at a volume that would otherwise take a full marketing team.</p></div>
+      <div class="card reveal"><span class="chip">📣</span><h4>Social Engagement</h4><p>Comment replies and DMs handled automatically and on-brand, so your response time stops being the thing costing you customers.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section process" id="process" data-section="process">
+  <div class="wrap">
+    <div class="eyebrow">How It Works</div>
+    <h2 class="h2 reveal">Three steps. No six-month rollout.</h2>
+    <p class="sub reveal">You'll know what we're building, why, and what it should return — before anything gets built.</p>
+    <div class="steps">
+      <div class="step reveal"><div class="step-num">01</div><h4>Assess</h4><p>We map how work actually moves through your business and pinpoint where AI creates the fastest measurable win — not the flashiest one.</p></div>
+      <div class="step reveal"><div class="step-num">02</div><h4>Implement</h4><p>We build the assistant, automation, or data layer and wire it into your existing stack. You approve before anything touches customers.</p></div>
+      <div class="step reveal"><div class="step-num">03</div><h4>Scale</h4><p>We monitor real usage, tune what's underperforming, and extend the pattern into the next part of the business.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section why center" id="why" data-section="why">
+  <div class="wrap">
+    <div class="eyebrow">Why SAGED.AI</div>
+    <h2 class="h2 reveal">A strategist, not a software vendor</h2>
+    <p class="sub reveal" style="margin-left:auto;margin-right:auto">Most AI firms hand you a platform and wish you luck. We work the business problem first and reach for technology second — which usually means you buy less software, not more.</p>
+    <ul class="why-points">
+      <li class="reveal">Led by an MBA-credentialed strategist, not a sales team</li>
+      <li class="reveal">Built around your existing tools, not a rip-and-replace</li>
+      <li class="reveal">Outcomes defined and agreed before we build anything</li>
+      <li class="reveal">Ongoing tuning, so results compound instead of decay</li>
+    </ul>
   </div>
 </section>
 
 <section class="section testimonials center" id="testimonials" data-section="testimonials">
   <div class="wrap">
     <div class="eyebrow">Testimonials</div>
-    <h2 class="h2 reveal">What Our Clients Have to Say</h2>
-    <p class="sub reveal" style="margin-left:auto;margin-right:auto">Discover what our clients have to say about SAGED.AI</p>
+    <h2 class="h2 reveal">What our clients say</h2>
     <div class="grid-3" style="text-align:left">
       <div class="card t-card reveal">
+        <div class="quote-mark">"</div>
         <blockquote>SAGED.AI's AI-powered CRM analysis offers personalized service, boosting client loyalty. Automated communications provide consistent engagement, enhancing our studio's growth and reputation with unprecedented personalization.</blockquote>
-        <div class="t-person"><img src="https://dwhitatl.github.io/saged-ai-site/assets/testimonial-michelle.jpg" alt="Michelle Simons"><div><div class="nm">Michelle Simons</div><div class="rl">Owner at Yoga Studio</div></div></div>
+        <div class="t-person"><img src="https://dwhitatl.github.io/saged-ai-site/assets/testimonial-michelle.jpg" alt="Michelle Simons"><div><div class="nm">Michelle Simons</div><div class="rl">Owner, Yoga Studio</div></div></div>
       </div>
       <div class="card t-card reveal">
+        <div class="quote-mark">"</div>
         <blockquote>SAGED.AI's AI solutions personalize shopping, enhancing conversions with tailored recommendations. AI-powered chatbots efficiently handle queries. We foresee its potential in streamlining Customer Service and HR.</blockquote>
-        <div class="t-person"><img src="https://dwhitatl.github.io/saged-ai-site/assets/testimonial-ava.jpg" alt="Ava Richardson"><div><div class="nm">Ava Richardson</div><div class="rl">Founder at E-Commerce Brand</div></div></div>
+        <div class="t-person"><img src="https://dwhitatl.github.io/saged-ai-site/assets/testimonial-ava.jpg" alt="Ava Richardson"><div><div class="nm">Ava Richardson</div><div class="rl">Founder, E-Commerce Brand</div></div></div>
       </div>
       <div class="card t-card reveal">
+        <div class="quote-mark">"</div>
         <blockquote>SAGED.AI's AI revolutionized our firm, streamlining tasks and boosting efficiency. Its rapid data processing enhances client-focused work, promising growth in Sales and Customer Service.</blockquote>
-        <div class="t-person"><img src="https://dwhitatl.github.io/saged-ai-site/assets/testimonial-michael.jpg" alt="Michael Johnson"><div><div class="nm">Michael Johnson</div><div class="rl">CEO at CPA Firm</div></div></div>
+        <div class="t-person"><img src="https://dwhitatl.github.io/saged-ai-site/assets/testimonial-michael.jpg" alt="Michael Johnson"><div><div class="nm">Michael Johnson</div><div class="rl">CEO, CPA Firm</div></div></div>
       </div>
     </div>
   </div>
@@ -522,56 +504,55 @@
 <section class="section pricing center" id="pricing" data-section="pricing">
   <div class="wrap">
     <div class="eyebrow">Pricing</div>
-    <h2 class="h2 reveal">SAGED.AI Pricing Plans</h2>
-    <p class="sub reveal" style="margin-left:auto;margin-right:auto">Flexible plans designed to meet your business wherever it is in the AI journey.</p>
-    <div class="p-toggle">Monthly</div>
+    <h2 class="h2 reveal">Plans that meet you where you are</h2>
+    <div class="p-toggle">Billed Monthly</div>
     <div class="p-grid">
       <div class="p-card reveal">
         <h4>Essential AI</h4>
         <div class="p-price">$499 <small>/ month</small></div>
-        <p class="p-desc">💡 Engage visitors and automate conversations with a smart AI chatbot that answers FAQs and captures leads 24/7. Perfect for businesses new to AI.</p>
+        <p class="p-desc">Engage visitors and automate conversations with an assistant that answers questions and captures leads 24/7. Built for businesses making their first move into AI.</p>
         <ul class="p-list">
-          <li class="hdr">What's included</li>
+          <li class="hdr">Included</li>
           <li>AI Readiness Audit</li>
-          <li>Basic AI Chatbot Setup</li>
+          <li>AI Chatbot Setup</li>
           <li>AI-Powered Social Media Strategy</li>
-          <li>Basic 60-day Business Analysis</li>
+          <li>60-day Business Analysis</li>
           <li>30-Minute Strategy Session</li>
         </ul>
-        <p class="p-note">📅 Start automating today – book a consultation!</p>
-        <a class="btn btn-primary" href="https://account.disruptmotion.com/services/0ccdae052a0d467469483d2efebde470/checkouts" target="_blank" rel="noopener">Subscribe</a>
+        <p class="p-note">Start with a consultation — no commitment.</p>
+        <a class="btn btn-out" href="https://account.disruptmotion.com/services/0ccdae052a0d467469483d2efebde470/checkouts" target="_blank" rel="noopener">Subscribe</a>
       </div>
       <div class="p-card featured reveal">
         <h4>Growth AI Accelerator</h4>
         <div class="p-price">$799 <small>/ month</small></div>
-        <p class="p-desc">🚀 Upgrade your AI Assistant into a full CRM, email responder, and VIP program manager — streamlining operations and driving revenue.</p>
+        <p class="p-desc">Your assistant becomes a full CRM, email responder, and VIP program manager — streamlining operations while it drives revenue.</p>
         <ul class="p-list">
-          <li class="hdr">What's included</li>
-          <li>Everything in the Essential Plan</li>
+          <li class="hdr">Included</li>
+          <li>Everything in Essential</li>
           <li>Agentic AI Assistant</li>
-          <li>Business Intelligence and Analytics</li>
+          <li>Business Intelligence &amp; Analytics</li>
           <li>Customer Relationship Management</li>
           <li>Workflow Automation</li>
           <li>45-Minute Strategy Session</li>
         </ul>
-        <p class="p-note">📅 Start automating today – book a consultation!</p>
+        <p class="p-note">Most chosen by growing teams.</p>
         <a class="btn btn-primary" href="https://account.disruptmotion.com/services/0ccdae052a0d467469483d2efebde470/checkouts" target="_blank" rel="noopener">Subscribe</a>
       </div>
       <div class="p-card reveal">
         <h4>Enterprise AI</h4>
-        <div class="p-price" style="font-size:28px;line-height:1.3">Call Us for Pricing</div>
-        <p class="p-desc">🚀 Bespoke AI automation, advanced analytics, and executive-level strategy built for scalability and market dominance.</p>
+        <div class="p-price" style="font-size:27px;line-height:1.35">Custom Pricing</div>
+        <p class="p-desc">Bespoke automation, advanced analytics, and executive-level strategy for organizations operating at scale.</p>
         <ul class="p-list">
-          <li class="hdr">What's included</li>
-          <li>Everything in Essential and Growth</li>
+          <li class="hdr">Included</li>
+          <li>Everything in Essential &amp; Growth</li>
           <li>Omnichannel AI Assistant</li>
           <li>AI-Powered Document Automation</li>
           <li>Enterprise Analytics &amp; Forecasting</li>
           <li>Dedicated Executive AI Advisor</li>
-          <li>60-Minute Strategy Call with a Senior Executive</li>
+          <li>60-Minute Senior Strategy Call</li>
         </ul>
-        <p class="p-note">📅 Start automating today – book a consultation!</p>
-        <a class="btn btn-ghost" href="https://paymegpt.com/p/8qNX2qhXY">Contact Us</a>
+        <p class="p-note">Scoped to your organization.</p>
+        <a class="btn btn-out" href="https://paymegpt.com/p/8qNX2qhXY">Contact Us</a>
       </div>
     </div>
   </div>
@@ -583,66 +564,64 @@
       <aside class="faq-aside reveal">
         <div class="faq-photo">
           <img src="https://paymegpt.com/objects/quick-uploads/83/427fb9ace8c5d029.webp" alt="Denise Whitfield, President and CEO of SAGED.AI">
-          <div class="tag">Denise Whitfield<small>President &amp; CEO</small></div>
         </div>
         <div class="eyebrow">Ask Denise</div>
-        <h2>Straight Answers, No Sales Pitch</h2>
+        <h2>Straight answers, no sales pitch</h2>
         <p>These are the questions business owners bring me most often. If yours isn't here, ask me directly — you'll get a real answer, not a brochure.</p>
-        <a class="btn btn-primary" href="https://calendly.com/denisedwhitfield/30min" target="_blank" rel="noopener">Ask Me Your Question</a>
+        <a class="btn btn-teal" href="https://calendly.com/denisedwhitfield/30min" target="_blank" rel="noopener">Ask Me Your Question</a>
       </aside>
       <div class="faq-list">
         <details class="faq-item" open>
           <summary>What does SAGED.AI specialize in?</summary>
-          <div class="faq-body">SAGED.AI specializes in AI-driven business transformation for small and medium-sized businesses. We provide conversational AI, agentic AI solutions, workflow automation, predictive analytics, and AI-driven business intelligence to help companies streamline operations, automate tasks, and scale profitability.</div>
+          <div class="faq-body">AI-driven business transformation for small and medium-sized businesses — conversational AI, agentic AI, workflow automation, predictive analytics, and business intelligence, applied to streamline operations and scale profitability.</div>
         </details>
         <details class="faq-item">
-          <summary>How can AI help my business scale and become more profitable?</summary>
-          <div class="faq-body">AI accelerates growth by automating repetitive tasks, optimizing decision-making, and improving efficiency:
-• Reduce operational costs by up to 40% through workflow automation.
-• Increase sales and revenue with AI-driven lead generation and conversion optimization.
-• Improve customer experience through AI-powered support, cutting response times by 60% or more.
-• Enhance business intelligence with data-driven strategic insight.</div>
+          <summary>How can AI help my business become more profitable?</summary>
+          <div class="faq-body">By automating repetitive work, sharpening decisions, and removing delay from customer interactions:
+• Reduce operating costs by up to 40% through workflow automation
+• Increase revenue with AI-driven lead generation and conversion
+• Cut customer response times by 60% or more
+• Turn scattered data into decisions you can actually act on</div>
         </details>
         <details class="faq-item">
           <summary>What is Agentic AI, and how does it benefit my business?</summary>
-          <div class="faq-body">Agentic AI goes beyond answering questions — it takes action, planning and executing multi-step tasks on its own. That means an assistant that follows up on leads, books appointments, and updates your CRM automatically, with workflows that run end-to-end without manual handoffs.</div>
+          <div class="faq-body">Agentic AI doesn't just answer — it acts. It plans and executes multi-step work on its own: following up on leads, booking appointments, updating your CRM, and running workflows end to end without a person handing off between steps.</div>
         </details>
         <details class="faq-item">
-          <summary>How does AI-powered Conversational AI differ from traditional chatbots?</summary>
-          <div class="faq-body">Traditional chatbots follow rigid scripts. AI-powered Conversational AI understands natural language, context, and intent — trained on your company's own data, handling bookings, lead capture, and follow-up in the same conversation, and improving over time.</div>
+          <summary>How is this different from a regular chatbot?</summary>
+          <div class="faq-body">Traditional chatbots follow rigid scripts and break the moment a customer says something unexpected. Conversational AI understands language, context, and intent, is trained on your own material, and handles bookings and lead capture inside the same conversation — improving as it goes.</div>
         </details>
         <details class="faq-item">
-          <summary>What are the top AI trends for 2026 that businesses should prepare for?</summary>
-          <div class="faq-body">• Agentic AI at scale: nearly 1 in 4 organizations now deploying agents that complete multi-step tasks autonomously.
-• The $650B infrastructure boom making powerful AI cheaper and more accessible to SMBs.
-• Hyper-personalization of offers, content, and outreach.
-• Voice AI as the fastest-growing AI channel.
-• Expanding AI governance and regulation.</div>
+          <summary>What AI trends should I prepare for over the next few years?</summary>
+          <div class="faq-body">• Agentic AI at scale — roughly 1 in 4 organizations already deploying autonomous agents
+• A $650B infrastructure boom making capable AI dramatically cheaper for smaller businesses
+• Hyper-personalization of offers, content, and outreach
+• Voice becoming the fastest-growing AI channel
+• Expanding governance and disclosure expectations</div>
         </details>
         <details class="faq-item">
-          <summary>Is AI difficult to implement in small and medium-sized businesses?</summary>
-          <div class="faq-body">Not with the right partner. Most SAGED.AI solutions integrate with the tools you already use — your website, calendar, CRM, and social channels — and implementation is handled for you from setup through launch, with measurable results starting in high-impact areas first.</div>
+          <summary>Is AI hard to implement in a smaller business?</summary>
+          <div class="faq-body">Not with the right partner. Most of what we build integrates with tools you already use — website, calendar, CRM, social channels. Implementation is handled for you from setup through launch, starting with the highest-impact area so you see results early.</div>
         </details>
         <details class="faq-item">
-          <summary>How do I get started with AI at SAGED.AI?</summary>
-          <div class="faq-body">1. Schedule a free consultation to discuss your business challenges and AI goals.
-2. Our team assesses your needs and proposes a tailored AI strategy.
-3. We implement AI-driven solutions, ensuring seamless integration and measurable impact.
-4. Ongoing support and optimization to maximize efficiency and ROI.</div>
+          <summary>How do I get started?</summary>
+          <div class="faq-body">1. Book a free consultation to talk through your challenges and goals.
+2. We assess your operation and propose a tailored strategy.
+3. We implement, integrate, and measure the impact.
+4. We support and optimize as the business grows.</div>
         </details>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section final-cta">
+<section class="section final-cta center">
   <div class="wrap">
-    <div class="eyebrow" style="justify-content:center">Ready When You Are</div>
-    <h2 class="h2 reveal">The AI Gap Is Closing Fast. Don't Watch From the Sidelines.</h2>
-    <p class="sub reveal" style="margin-left:auto;margin-right:auto">Book a free 30-minute AI audit and leave with a clear, practical plan — not a sales pitch.</p>
-    <div class="hero-ctas" style="margin-top:32px">
-      <a class="btn btn-amber" href="https://calendly.com/denisedwhitfield/30min" target="_blank" rel="noopener">Book Your Free AI Audit</a>
-      <a class="btn btn-ghost" href="https://paymegpt.com/p/8qNX2qhXY">Contact Us</a>
+    <div class="eyebrow">Ready When You Are</div>
+    <h2 class="h2 reveal">Let's find the AI that's worth your money.</h2>
+    <p class="sub reveal" style="margin-left:auto;margin-right:auto">Thirty minutes, no cost, no pitch. You'll leave with a practical plan whether or not you work with us.</p>
+    <div class="hero-ctas" style="margin-top:32px;justify-content:center">
+      <a class="btn btn-light" href="https://calendly.com/denisedwhitfield/30min" target="_blank" rel="noopener">Book Your Free AI Audit</a>
     </div>
   </div>
 </section>
@@ -653,7 +632,7 @@
       <img src="https://paymegpt.com/objects/generated-images/83/1786235577415-ca1d54fb07c29187.png" alt="SAGED.AI">
       <span>SAGED.AI</span>
     </div>
-    <p class="footer-tag">Atlanta, GA — AI Consulting for Small &amp; Medium-Sized Businesses</p>
+    <p class="footer-tag">Atlanta, GA — AI consulting for small &amp; medium-sized businesses</p>
     <p class="copyright">© 2026 SAGED.AI</p>
   </div>
 </footer>
