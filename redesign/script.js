@@ -9,26 +9,21 @@
       try{ localStorage.setItem('saged-theme', cur); }catch(e){}
     });
   }
-
   document.querySelectorAll('.nav-mobile a').forEach(function(a){
     a.addEventListener('click', function(){ document.getElementById('nav').classList.remove('open'); });
   });
-
   var track = document.getElementById('marqueeTrack');
   if(track){ track.innerHTML += track.innerHTML; }
-
   document.querySelectorAll('.flip').forEach(function(c){
     c.addEventListener('click', function(){ c.classList.toggle('flipped'); });
     c.addEventListener('keydown', function(e){
       if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); c.classList.toggle('flipped'); }
     });
   });
-
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, {threshold:.14});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
-
   var cio = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){
@@ -50,7 +45,6 @@
     });
   }, {threshold:.4});
   document.querySelectorAll('.stat-num').forEach(function(el){ cio.observe(el); });
-
   var vid = document.getElementById('denisePreview');
   var fallback = document.getElementById('videoFallback');
   if(vid){
@@ -69,7 +63,7 @@
 })();
 
 (function () {
-    const CHAT_COLOR = '#0C9C83';
+    const CHAT_COLOR = '#1C5A63';
     const ACCOUNT_ID = '1605006';
     const CHATBOT_ID = 'TPMVAgTlLyk';
     const BUTTON_IMAGE_URL = 'https://storage.googleapis.com/wttus/assets/57/a/1605006/images/Avator-for%20Chat%20bubble%202-16-2025.png';
@@ -78,11 +72,11 @@
     styleSheet.innerText = `
         @keyframes floatButton { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-10px);} }
         #chat-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background:transparent; z-index:9998; display:none; }
-        #chat-container { position: fixed; bottom:0; left:50%; transform:translate(-50%,110%); width:360px; height:600px; background:#fff; border-radius:20px; overflow:hidden; z-index:9999; display:flex; flex-direction:column; transition:transform .6s ease, opacity .6s ease; opacity:0; box-shadow:0 24px 70px rgba(0,0,0,.35); }
-        @media(max-width:768px){ #chat-container{ width:100%; height:100%; border-radius:20px; left:0; top:0; transform:translate(0,110%);} }
-        #chat-button { position:fixed; bottom:20px; right:20px; background:#fff; border:none; border-radius:50%; width:62px; height:62px; cursor:pointer; z-index:10000; box-shadow:0 6px 24px rgba(12,156,131,.45); animation:floatButton 3s infinite ease; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+        #chat-container { position: fixed; bottom:0; left:50%; transform:translate(-50%,110%); width:360px; height:600px; background:#fff; border-radius:16px; overflow:hidden; z-index:9999; display:flex; flex-direction:column; transition:transform .6s ease, opacity .6s ease; opacity:0; box-shadow:0 24px 70px rgba(18,58,66,.4); }
+        @media(max-width:768px){ #chat-container{ width:100%; height:100%; border-radius:16px; left:0; top:0; transform:translate(0,110%);} }
+        #chat-button { position:fixed; bottom:20px; right:20px; background:#FFFDF8; border:none; border-radius:50%; width:62px; height:62px; cursor:pointer; z-index:10000; box-shadow:0 6px 24px rgba(194,168,104,.55); animation:floatButton 3s infinite ease; display:flex; align-items:center; justify-content:center; overflow:hidden; }
         #chat-icon.rotate-right { transition:transform .5s; transform:rotate(90deg); }
-        .close-chat { position:absolute; top:10px; right:10px; width:35px; height:35px; background:transparent; color:#08111A; border:none; font-size:30px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+        .close-chat { position:absolute; top:10px; right:10px; width:35px; height:35px; background:transparent; color:#123A42; border:none; font-size:30px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
     `;
     document.head.appendChild(styleSheet);
     const overlay = document.createElement('div');
@@ -91,9 +85,9 @@
     const container = document.createElement('div');
     container.id = 'chat-container';
     if (window.innerWidth <= 768) {
-        container.style.cssText = `position:fixed; top:0; left:0; width:100%; height:100%; background:#fff; border-radius:20px; overflow:hidden; z-index:9999; display:flex; flex-direction:column; transition:transform .6s ease, opacity .6s ease; opacity:0; transform:translate(0,110%);`;
+        container.style.cssText = `position:fixed; top:0; left:0; width:100%; height:100%; background:#fff; border-radius:16px; overflow:hidden; z-index:9999; display:flex; flex-direction:column; transition:transform .6s ease, opacity .6s ease; opacity:0; transform:translate(0,110%);`;
     } else {
-        container.style.cssText = `position:fixed; bottom:0; left:50%; transform:translate(-50%,110%); width:360px; height:600px; background:#fff; border-radius:20px; overflow:hidden; z-index:9999; display:flex; flex-direction:column; transition:transform .6s ease, opacity .6s ease; opacity:0;`;
+        container.style.cssText = `position:fixed; bottom:0; left:50%; transform:translate(-50%,110%); width:360px; height:600px; background:#fff; border-radius:16px; overflow:hidden; z-index:9999; display:flex; flex-direction:column; transition:transform .6s ease, opacity .6s ease; opacity:0;`;
     }
     container.innerHTML = `<button class="close-chat" style="position:absolute; top:10px; right:10px; z-index:10001;">&times;</button><div id="chat-body" style="flex-grow:1; overflow:hidden;"></div>`;
     document.body.appendChild(container);
