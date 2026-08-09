@@ -62,70 +62,48 @@
   }
 })();
 
-(function () {
-    const CHAT_COLOR = '#1C5A63';
-    const ACCOUNT_ID = '1605006';
-    const CHATBOT_ID = 'TPMVAgTlLyk';
-    const BUTTON_IMAGE_URL = 'https://storage.googleapis.com/wttus/assets/57/a/1605006/images/Avator-for%20Chat%20bubble%202-16-2025.png';
-    let isChatOpen = false;
-    const styleSheet = document.createElement('style');
-    styleSheet.innerText = `
-        @keyframes floatButton { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-10px);} }
-        #chat-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background:transparent; z-index:9998; display:none; }
-        #chat-container { position: fixed; bottom:0; left:50%; transform:translate(-50%,110%); width:360px; height:600px; background:#fff; border-radius:16px; overflow:hidden; z-index:9999; display:flex; flex-direction:column; transition:transform .6s ease, opacity .6s ease; opacity:0; box-shadow:0 24px 70px rgba(18,58,66,.4); }
-        @media(max-width:768px){ #chat-container{ width:100%; height:100%; border-radius:16px; left:0; top:0; transform:translate(0,110%);} }
-        #chat-button { position:fixed; bottom:20px; right:20px; background:#FFFDF8; border:none; border-radius:50%; width:62px; height:62px; cursor:pointer; z-index:10000; box-shadow:0 6px 24px rgba(194,168,104,.55); animation:floatButton 3s infinite ease; display:flex; align-items:center; justify-content:center; overflow:hidden; }
-        #chat-icon.rotate-right { transition:transform .5s; transform:rotate(90deg); }
-        .close-chat { position:absolute; top:10px; right:10px; width:35px; height:35px; background:transparent; color:#123A42; border:none; font-size:30px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
-    `;
-    document.head.appendChild(styleSheet);
-    const overlay = document.createElement('div');
-    overlay.id = 'chat-overlay';
-    document.body.appendChild(overlay);
-    const container = document.createElement('div');
-    container.id = 'chat-container';
-    if (window.innerWidth <= 768) {
-        container.style.cssText = `position:fixed; top:0; left:0; width:100%; height:100%; background:#fff; border-radius:16px; overflow:hidden; z-index:9999; display:flex; flex-direction:column; transition:transform .6s ease, opacity .6s ease; opacity:0; transform:translate(0,110%);`;
-    } else {
-        container.style.cssText = `position:fixed; bottom:0; left:50%; transform:translate(-50%,110%); width:360px; height:600px; background:#fff; border-radius:16px; overflow:hidden; z-index:9999; display:flex; flex-direction:column; transition:transform .6s ease, opacity .6s ease; opacity:0;`;
-    }
-    container.innerHTML = `<button class="close-chat" style="position:absolute; top:10px; right:10px; z-index:10001;">&times;</button><div id="chat-body" style="flex-grow:1; overflow:hidden;"></div>`;
-    document.body.appendChild(container);
-    const button = document.createElement('button');
-    button.id = "chat-button";
-    button.innerHTML = `<img id="chat-icon" src="${BUTTON_IMAGE_URL}" alt="Chat" style="width:62px; height:62px;">`;
-    document.body.appendChild(button);
-    function openChat() {
-        overlay.style.display = 'block';
-        if (window.innerWidth <= 768) { button.style.display = 'none'; }
-        else { document.getElementById('chat-icon').classList.add('rotate-right'); }
-        isChatOpen = true;
-        localStorage.removeItem('ktt10_chat_data');
-        if (typeof ktt10 !== 'undefined') {
-            ktt10.setup({ id: CHATBOT_ID, accountId: ACCOUNT_ID, color: CHAT_COLOR, element: '#chat-body', type: 'container', loadMessages: false });
-        }
-        setTimeout(() => {
-            container.style.transform = window.innerWidth <= 768 ? 'translate(0,0)' : 'translate(-50%,-10%)';
-            container.style.opacity = '1';
-        }, 100);
-    }
-    function closeChat() {
-        overlay.style.display = 'none';
-        container.style.transform = window.innerWidth <= 768 ? 'translate(0,110%)' : 'translate(-50%,110%)';
-        container.style.opacity = '0';
-        if (window.innerWidth <= 768) { button.style.display = 'flex'; }
-        else { document.getElementById('chat-icon').classList.remove('rotate-right'); }
-        isChatOpen = false;
-        localStorage.removeItem('ktt10_chat_data');
-    }
-    button.onclick = function () { if (isChatOpen) { closeChat(); } else { openChat(); } };
-    container.querySelector('.close-chat').onclick = closeChat;
-    window.clearChat = () => { document.getElementById('chat-body').innerHTML = ''; };
-    window.openChat = openChat;
-    document.addEventListener("submit", e => {
-        if (e.target.matches(".chat-input form")) { e.preventDefault(); e.target.querySelector("button[type='submit']").click(); }
-    }, true);
-    const script = document.createElement('script');
-    script.src = 'https://app.chatgptbuilder.io/webchat/plugin.js?v=6';
-    document.body.appendChild(script);
+(function(){
+  var panel=document.getElementById('askPanel'),
+      frame=document.getElementById('askFrame'),
+      closeBtn=document.getElementById('askClose'),
+      restart=document.getElementById('askRestart'),
+      again=document.getElementById('askNew');
+  if(!panel||!frame) return;
+
+  var BASE='https://paymegpt.com/agents/47699893/embed';
+  var IDLE=120000;
+  var timer=null, started=false;
+
+  function fresh(){ frame.src = BASE + '?s=' + Date.now() + Math.random().toString(36).slice(2,8); }
+  function endChat(){
+    clearTimeout(timer); timer=null; started=false;
+    frame.src='about:blank';
+    panel.className='ask-inline off';
+    if(restart) restart.className='ask-restart on';
+  }
+  function newChat(){
+    if(restart) restart.className='ask-restart';
+    panel.className='ask-inline';
+    fresh(); started=false;
+    clearTimeout(timer); timer=null;
+  }
+  function kick(){ if(!started) return; clearTimeout(timer); timer=setTimeout(endChat, IDLE); }
+  function begin(){ if(started) return; started=true; kick(); }
+
+  fresh();
+
+  window.addEventListener('blur', function(){
+    setTimeout(function(){ if(document.activeElement === frame){ begin(); kick(); } }, 0);
+  });
+  ['mousemove','keydown','click','scroll','touchstart'].forEach(function(ev){
+    document.addEventListener(ev, function(){
+      if(document.activeElement === frame){ begin(); }
+      kick();
+    }, {passive:true});
+  });
+  setInterval(function(){ if(document.activeElement === frame){ begin(); kick(); } }, 4000);
+
+  if(closeBtn) closeBtn.addEventListener('click', endChat);
+  if(again) again.addEventListener('click', newChat);
+  window.addEventListener('pageshow', function(e){ if(e.persisted) newChat(); });
 })();
