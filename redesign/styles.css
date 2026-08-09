@@ -234,6 +234,10 @@ h1,h2,h3,h4,h5,p{margin:0}
 }
 
 .ask-box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;text-align:left;margin-bottom:14px}
+    .ask-inline{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card);box-shadow:0 8px 26px var(--shadow)}
+    .ask-inline-head{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);padding:12px 14px;border-bottom:1px solid var(--line);text-align:left}
+    .ask-inline iframe{display:block;width:100%;height:470px;border:none;background:var(--card)}
+    @media(max-width:1080px){.ask-inline iframe{height:520px}}
     .ask-row{display:flex;gap:8px;align-items:flex-end}
     .ask-box textarea{flex:1;resize:none;border:1px solid var(--line-2);border-radius:8px;background:var(--surface);color:var(--ink);font-family:"Inter",sans-serif;font-size:14.5px;padding:11px 12px;line-height:1.5;min-height:46px;max-height:120px;outline:none}
     .ask-box textarea:focus{border-color:var(--gold)}
