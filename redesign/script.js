@@ -63,6 +63,22 @@
 })();
 
 (function(){
+  var BOOK = 'https://calendly.com/denisedwhitfield/30min';
+  function go(e){
+    e.preventDefault();
+    if(window.Calendly && window.Calendly.initPopupWidget){
+      window.Calendly.initPopupWidget({url: BOOK});
+    }else{
+      window.open(BOOK, '_blank', 'noopener');
+    }
+    return false;
+  }
+  document.querySelectorAll('a[data-book="1"]').forEach(function(a){
+    a.addEventListener('click', go);
+  });
+})();
+
+(function(){
   var startCard = document.getElementById('askStart'),
       beginBtn  = document.getElementById('askBegin'),
       panel     = document.getElementById('askPanel'),
@@ -74,8 +90,6 @@
   var IDLE = 30000;
   var timer = null, live = false;
 
-  // Clear any stored conversation state we are allowed to touch, so a new
-  // visitor never inherits the previous one.
   function wipe(){
     try{
       [localStorage, sessionStorage].forEach(function(store){
@@ -101,7 +115,6 @@
   function open(){
     wipe();
     var t = token();
-    // Several session-reset hints — harmless if the platform ignores them.
     frame.src = BASE + '?new=1&reset=1&fresh=1&s=' + t + '&session=' + t +
                 '&sessionId=' + t + '&conversationId=' + t;
     startCard.className = 'ask-start off';
@@ -127,7 +140,6 @@
   if(beginBtn) beginBtn.addEventListener('click', open);
   if(closeBtn) closeBtn.addEventListener('click', close);
 
-  // Focus inside the chat iframe counts as activity.
   window.addEventListener('blur', function(){
     setTimeout(function(){ if(document.activeElement === frame) kick(); }, 0);
   });
@@ -136,7 +148,6 @@
   });
   setInterval(function(){ if(live && document.activeElement === frame) kick(); }, 4000);
 
-  // Leaving or returning to the page always resets to the start card.
   window.addEventListener('pagehide', close);
   window.addEventListener('pageshow', function(e){ if(e.persisted) close(); });
 })();
