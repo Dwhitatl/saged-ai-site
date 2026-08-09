@@ -2,7 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://dwhitatl.github.io/saged-ai-site/redesign/</loc>
-    <lastmod>2026-08-09T16:52:13.661Z</lastmod>
+    <lastmod>2026-08-09T17:18:04.993Z</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://dwhitatl.github.io/saged-ai-site/</loc>
+    <lastmod>2026-08-09T16:54:40.698Z</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>
