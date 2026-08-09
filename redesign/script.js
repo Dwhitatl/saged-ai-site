@@ -17,6 +17,13 @@
   var track = document.getElementById('marqueeTrack');
   if(track){ track.innerHTML += track.innerHTML; }
 
+  document.querySelectorAll('.flip').forEach(function(c){
+    c.addEventListener('click', function(){ c.classList.toggle('flipped'); });
+    c.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); c.classList.toggle('flipped'); }
+    });
+  });
+
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, {threshold:.14});
@@ -55,7 +62,7 @@
     });
     vid.addEventListener('error', function(){
       vid.style.display = 'none';
-      if(fallback) fallback.style.display = 'flex';
+      if(fallback) fallback.style.display = 'block';
     });
     vid.load();
   }
@@ -67,37 +74,20 @@
     const CHATBOT_ID = 'TPMVAgTlLyk';
     const BUTTON_IMAGE_URL = 'https://storage.googleapis.com/wttus/assets/57/a/1605006/images/Avator-for%20Chat%20bubble%202-16-2025.png';
     let isChatOpen = false;
-
     const styleSheet = document.createElement('style');
     styleSheet.innerText = `
-        @keyframes floatButton {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
+        @keyframes floatButton { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-10px);} }
         #chat-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background:transparent; z-index:9998; display:none; }
-        #chat-container {
-            position: fixed; bottom:0; left:50%; transform:translate(-50%,110%);
-            width:360px; height:600px; background:#fff; border-radius:20px; overflow:hidden;
-            z-index:9999; display:flex; flex-direction:column;
-            transition:transform .6s ease, opacity .6s ease; opacity:0;
-            box-shadow:0 24px 70px rgba(0,0,0,.35);
-        }
+        #chat-container { position: fixed; bottom:0; left:50%; transform:translate(-50%,110%); width:360px; height:600px; background:#fff; border-radius:20px; overflow:hidden; z-index:9999; display:flex; flex-direction:column; transition:transform .6s ease, opacity .6s ease; opacity:0; box-shadow:0 24px 70px rgba(0,0,0,.35); }
         @media(max-width:768px){ #chat-container{ width:100%; height:100%; border-radius:20px; left:0; top:0; transform:translate(0,110%);} }
-        #chat-button {
-            position:fixed; bottom:20px; right:20px; background:#fff; border:none; border-radius:50%;
-            width:62px; height:62px; cursor:pointer; z-index:10000;
-            box-shadow:0 6px 24px rgba(12,156,131,.45);
-            animation:floatButton 3s infinite ease; display:flex; align-items:center; justify-content:center; overflow:hidden;
-        }
+        #chat-button { position:fixed; bottom:20px; right:20px; background:#fff; border:none; border-radius:50%; width:62px; height:62px; cursor:pointer; z-index:10000; box-shadow:0 6px 24px rgba(12,156,131,.45); animation:floatButton 3s infinite ease; display:flex; align-items:center; justify-content:center; overflow:hidden; }
         #chat-icon.rotate-right { transition:transform .5s; transform:rotate(90deg); }
         .close-chat { position:absolute; top:10px; right:10px; width:35px; height:35px; background:transparent; color:#08111A; border:none; font-size:30px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
     `;
     document.head.appendChild(styleSheet);
-
     const overlay = document.createElement('div');
     overlay.id = 'chat-overlay';
     document.body.appendChild(overlay);
-
     const container = document.createElement('div');
     container.id = 'chat-container';
     if (window.innerWidth <= 768) {
@@ -107,12 +97,10 @@
     }
     container.innerHTML = `<button class="close-chat" style="position:absolute; top:10px; right:10px; z-index:10001;">&times;</button><div id="chat-body" style="flex-grow:1; overflow:hidden;"></div>`;
     document.body.appendChild(container);
-
     const button = document.createElement('button');
     button.id = "chat-button";
     button.innerHTML = `<img id="chat-icon" src="${BUTTON_IMAGE_URL}" alt="Chat" style="width:62px; height:62px;">`;
     document.body.appendChild(button);
-
     function openChat() {
         overlay.style.display = 'block';
         if (window.innerWidth <= 768) { button.style.display = 'none'; }
