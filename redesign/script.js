@@ -63,32 +63,25 @@
 })();
 
 (function(){
-  var BOOK = 'https://calendly.com/denisedwhitfield/30min';
-  function go(e){
-    e.preventDefault();
-    if(window.Calendly && window.Calendly.initPopupWidget){
-      window.Calendly.initPopupWidget({url: BOOK});
-    }else{
-      window.open(BOOK, '_blank', 'noopener');
-    }
-    return false;
-  }
-  document.querySelectorAll('a[data-book="1"]').forEach(function(a){
-    a.addEventListener('click', go);
-  });
-})();
-
-(function(){
   var startCard = document.getElementById('askStart'),
       beginBtn  = document.getElementById('askBegin'),
       panel     = document.getElementById('askPanel'),
       frame     = document.getElementById('askFrame'),
-      closeBtn  = document.getElementById('askClose');
+      closeBtn  = document.getElementById('askClose'),
+      eyebrowEl = document.getElementById('askEyebrowText'),
+      introEl   = document.getElementById('askIntroText'),
+      panelLabelEl = document.getElementById('askPanelLabel');
   if(!startCard || !panel || !frame) return;
 
-  var BASE = 'https://paymegpt.com/agents/47699893/embed';
+  var ASK_BASE  = 'https://paymegpt.com/agents/47699893/embed';
+  var BOOK_BASE = 'https://paymegpt.com/agents/41566008/embed';
   var IDLE = 30000;
   var timer = null, live = false;
+
+  var COPY = {
+    ask:  { eyebrow: 'Answered live', intro: 'Ask us anything about applying AI in your business.', panelLabel: 'Ask us anything — answered live' },
+    book: { eyebrow: 'Book live — no forms', intro: 'Tell our concierge what day and time work, and it\u2019s booked on the spot.', panelLabel: 'Booking your free 30-minute audit' }
+  };
 
   function wipe(){
     try{
@@ -99,7 +92,7 @@
           var k = store.key(i);
           if(!k) continue;
           var lk = k.toLowerCase();
-          if(lk.indexOf('paymegpt')>-1 || lk.indexOf('47699893')>-1 ||
+          if(lk.indexOf('paymegpt')>-1 || lk.indexOf('47699893')>-1 || lk.indexOf('41566008')>-1 ||
              lk.indexOf('chat')>-1 || lk.indexOf('conversation')>-1 ||
              lk.indexOf('ktt10')>-1){ kill.push(k); }
         }
@@ -112,10 +105,20 @@
     return Date.now().toString(36) + Math.random().toString(36).slice(2,10);
   }
 
-  function open(){
+  function applyCopy(mode){
+    var c = COPY[mode] || COPY.ask;
+    if(eyebrowEl) eyebrowEl.textContent = c.eyebrow;
+    if(introEl) introEl.textContent = c.intro;
+    if(panelLabelEl) panelLabelEl.textContent = c.panelLabel;
+  }
+
+  function open(mode){
+    mode = mode === 'book' ? 'book' : 'ask';
+    applyCopy(mode);
     wipe();
     var t = token();
-    frame.src = BASE + '?new=1&reset=1&fresh=1&s=' + t + '&session=' + t +
+    var base = mode === 'book' ? BOOK_BASE : ASK_BASE;
+    frame.src = base + '?new=1&reset=1&fresh=1&s=' + t + '&session=' + t +
                 '&sessionId=' + t + '&conversationId=' + t;
     startCard.className = 'ask-start off';
     panel.className = 'ask-inline';
@@ -129,6 +132,7 @@
     wipe();
     panel.className = 'ask-inline off';
     startCard.className = 'ask-start';
+    applyCopy('ask');
   }
 
   function kick(){
@@ -137,8 +141,18 @@
     timer = setTimeout(close, IDLE);
   }
 
-  if(beginBtn) beginBtn.addEventListener('click', open);
+  if(beginBtn) beginBtn.addEventListener('click', function(){ open('ask'); });
   if(closeBtn) closeBtn.addEventListener('click', close);
+
+  document.querySelectorAll('a[data-book="1"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var faqSection = document.getElementById('faq');
+      if(faqSection){ faqSection.scrollIntoView({behavior:'smooth', block:'start'}); }
+      setTimeout(function(){ open('book'); }, 450);
+      return false;
+    });
+  });
 
   window.addEventListener('blur', function(){
     setTimeout(function(){ if(document.activeElement === frame) kick(); }, 0);
